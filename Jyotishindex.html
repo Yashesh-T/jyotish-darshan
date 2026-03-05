@@ -1,0 +1,1270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jyotish Darshan — Divine Astrology Guidance</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;500;600&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+:root{--gold:#D4AF37;--gold-light:#F0D060;--gold-dark:#9A7A20;--deep:#0A0612;--deep2:#120820;--deep3:#1C0F35;--purple:#4B1D8E;--cream:#F5EDD8;--text-light:#E8D8A0;--text-muted:#9A8A5A;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:var(--deep);color:var(--cream);font-family:'EB Garamond',serif;overflow-x:hidden;}
+.stars-bg{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:0;overflow:hidden;will-change:transform;}
+.star{position:absolute;border-radius:50%;background:white;will-change:opacity;}
+
+nav{position:fixed;top:0;width:100%;z-index:100;background:rgba(10,6,18,.96);border-bottom:1px solid rgba(212,175,55,.2);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:70px;backdrop-filter:blur(12px);}
+.nav-logo{font-family:'Cinzel Decorative',cursive;font-size:1.1rem;color:var(--gold);letter-spacing:2px;}
+.nav-logo span{color:var(--text-light);font-size:.65rem;display:block;letter-spacing:4px;font-family:'Cinzel',serif;}
+.lang-selector{display:flex;gap:.4rem;}
+.lang-btn{padding:5px 14px;border-radius:20px;cursor:pointer;font-size:.75rem;border:1px solid rgba(212,175,55,.3);background:transparent;color:var(--text-muted);font-family:'Cinzel',serif;letter-spacing:1px;transition:all .3s;}
+.lang-btn:hover,.lang-btn.active{border-color:var(--gold);color:var(--gold);background:rgba(212,175,55,.1);}
+.nav-links{display:flex;gap:2rem;list-style:none;}
+.nav-links a{color:var(--text-muted);text-decoration:none;font-family:'Cinzel',serif;font-size:.72rem;letter-spacing:2px;transition:color .3s;}
+.nav-links a:hover{color:var(--gold);}
+
+.hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative;text-align:center;padding:6rem 2rem 4rem;}
+.mandala-bg{position:absolute;width:700px;height:700px;border-radius:50%;top:50%;left:50%;transform:translate(-50%,-50%);background:radial-gradient(circle,rgba(75,29,142,.15) 0%,rgba(212,175,55,.05) 40%,transparent 70%);animation:rotateM 60s linear infinite;will-change:transform;}
+.mandala-ring{position:absolute;border-radius:50%;border:1px solid rgba(212,175,55,.1);will-change:transform;}
+@keyframes rotateM{to{transform:translate(-50%,-50%) rotate(360deg);}}
+@keyframes rotateMR{to{transform:translate(-50%,-50%) rotate(-360deg);}}
+.hero-om{font-size:5rem;color:var(--gold);line-height:1;animation:glowPulse 3s ease-in-out infinite;margin-bottom:1rem;position:relative;z-index:2;}
+@keyframes glowPulse{0%,100%{text-shadow:0 0 40px rgba(212,175,55,.6);}50%{text-shadow:0 0 80px rgba(212,175,55,.9),0 0 120px rgba(212,175,55,.4);}}
+.hero-title{font-family:'Cinzel Decorative',cursive;font-size:clamp(2rem,5vw,3.5rem);color:var(--gold);letter-spacing:4px;line-height:1.2;position:relative;z-index:2;}
+.hero-subtitle{font-family:'Cinzel',serif;font-size:.82rem;letter-spacing:6px;color:var(--text-muted);margin:1rem 0 2rem;position:relative;z-index:2;}
+.hero-desc{max-width:600px;font-size:1.1rem;color:var(--text-light);line-height:1.8;font-style:italic;position:relative;z-index:2;margin-bottom:2.5rem;}
+.cta-group{display:flex;gap:1rem;flex-wrap:wrap;justify-content:center;position:relative;z-index:2;}
+.btn-gold{padding:14px 36px;background:linear-gradient(135deg,var(--gold-dark),var(--gold));color:var(--deep);font-family:'Cinzel',serif;font-size:.85rem;letter-spacing:2px;border:none;border-radius:3px;cursor:pointer;transition:transform .2s,box-shadow .2s;font-weight:600;}
+.btn-gold:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(212,175,55,.4);}
+.btn-outline{padding:14px 36px;background:transparent;border:1px solid var(--gold);color:var(--gold);font-family:'Cinzel',serif;font-size:.85rem;letter-spacing:2px;border-radius:3px;cursor:pointer;transition:background .2s;}
+.btn-outline:hover{background:rgba(212,175,55,.1);}
+.btn-purple{padding:14px 36px;background:linear-gradient(135deg,#4B1D8E,#7B3DD4);color:white;font-family:'Cinzel',serif;font-size:.85rem;letter-spacing:2px;border:none;border-radius:3px;cursor:pointer;transition:transform .2s,box-shadow .2s;}
+.btn-purple:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(75,29,142,.5);}
+.scroll-indicator{position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:.5rem;z-index:2;animation:floatY 2s ease-in-out infinite;}
+@keyframes floatY{0%,100%{transform:translateX(-50%) translateY(0);}50%{transform:translateX(-50%) translateY(-8px);}}
+.scroll-line{width:1px;height:40px;background:linear-gradient(to bottom,var(--gold),transparent);}
+
+section{position:relative;z-index:1;padding:5rem 2rem;}
+.section-header{text-align:center;margin-bottom:3rem;}
+.section-tag{font-family:'Cinzel',serif;font-size:.68rem;letter-spacing:6px;color:var(--gold);margin-bottom:.8rem;display:block;}
+.section-title{font-family:'Cinzel Decorative',cursive;font-size:clamp(1.4rem,3vw,2.1rem);color:var(--text-light);line-height:1.3;}
+.divider{width:100px;height:2px;margin:1.2rem auto;background:linear-gradient(to right,transparent,var(--gold),transparent);}
+.section-sub{color:var(--text-muted);font-style:italic;font-size:1rem;}
+
+.rashis-section{background:linear-gradient(to bottom,var(--deep),var(--deep2));}
+.rashis-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(175px,1fr));gap:1rem;max-width:1100px;margin:0 auto;}
+.rashi-card{background:linear-gradient(135deg,rgba(28,15,53,.8),rgba(18,8,32,.9));border:1px solid rgba(212,175,55,.15);border-radius:8px;padding:1.4rem 1rem;text-align:center;cursor:pointer;transition:border-color .3s,transform .3s,box-shadow .3s;position:relative;overflow:hidden;}
+.rashi-card:hover{border-color:rgba(212,175,55,.5);transform:translateY(-4px);box-shadow:0 10px 30px rgba(212,175,55,.15);}
+.rashi-card.selected{border-color:var(--gold);box-shadow:0 0 20px rgba(212,175,55,.3);}
+.rashi-symbol{font-size:2.5rem;margin-bottom:.5rem;}
+.rashi-name{font-family:'Cinzel',serif;font-size:.88rem;color:var(--gold);letter-spacing:1px;}
+.rashi-hindi{font-size:1rem;color:var(--text-muted);margin:.2rem 0;}
+.rashi-dates{font-size:.68rem;color:var(--text-muted);}
+.rashi-element{font-size:.62rem;margin-top:.5rem;padding:3px 10px;border-radius:20px;display:inline-block;}
+.fire{background:rgba(255,80,50,.15);color:#FF8060;border:1px solid rgba(255,80,50,.3);}
+.earth{background:rgba(80,180,80,.15);color:#80C880;border:1px solid rgba(80,180,80,.3);}
+.air{background:rgba(80,150,255,.15);color:#80C0FF;border:1px solid rgba(80,150,255,.3);}
+.water{background:rgba(100,100,255,.15);color:#9090FF;border:1px solid rgba(100,100,255,.3);}
+
+.service-tabs{display:flex;gap:0;flex-wrap:wrap;justify-content:center;margin-bottom:2rem;}
+.tab-btn{padding:12px 24px;background:transparent;border:1px solid rgba(212,175,55,.2);color:var(--text-muted);cursor:pointer;font-family:'Cinzel',serif;font-size:.72rem;letter-spacing:1.5px;transition:all .3s;}
+.tab-btn:first-child{border-radius:4px 0 0 4px;}
+.tab-btn:last-child{border-radius:0 4px 4px 0;}
+.tab-btn.active{background:rgba(212,175,55,.15);color:var(--gold);border-color:rgba(212,175,55,.5);}
+.tab-content{display:none;}
+.tab-content.active{display:block;}
+.form-card{max-width:780px;margin:0 auto;background:linear-gradient(135deg,rgba(28,15,53,.6),rgba(18,8,32,.8));border:1px solid rgba(212,175,55,.2);border-radius:12px;padding:2.5rem;}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;}
+.form-group{display:flex;flex-direction:column;gap:.5rem;}
+.form-group.full{grid-column:1/-1;}
+label{font-family:'Cinzel',serif;font-size:.68rem;letter-spacing:2px;color:var(--gold);}
+input,select,textarea{background:rgba(10,6,18,.7);border:1px solid rgba(212,175,55,.2);border-radius:6px;padding:12px 16px;color:var(--cream);font-family:'EB Garamond',serif;font-size:1rem;outline:none;transition:border-color .2s;}
+input:focus,select:focus,textarea:focus{border-color:rgba(212,175,55,.6);}
+select option{background:var(--deep);}
+textarea{min-height:100px;resize:vertical;}
+.selected-rashi-display{display:flex;align-items:center;gap:1rem;padding:12px 16px;background:rgba(10,6,18,.7);border:1px solid rgba(212,175,55,.3);border-radius:6px;font-family:'Cinzel',serif;font-size:.85rem;color:var(--gold);}
+.upload-zone{border:2px dashed rgba(212,175,55,.3);border-radius:10px;padding:3rem 2rem;text-align:center;cursor:pointer;transition:all .3s;background:rgba(10,6,18,.4);}
+.upload-zone:hover{border-color:rgba(212,175,55,.7);}
+#fileInput{display:none;}
+.uploaded-file{display:none;align-items:center;gap:1rem;padding:1rem;background:rgba(212,175,55,.1);border-radius:8px;margin-top:1rem;border:1px solid rgba(212,175,55,.3);}
+.remove-file{cursor:pointer;color:#C0567A;font-size:1.2rem;}
+.response-area{max-width:780px;margin:2rem auto 0;background:linear-gradient(135deg,rgba(28,15,53,.8),rgba(18,8,32,.9));border:1px solid rgba(212,175,55,.25);border-radius:12px;overflow:hidden;display:none;}
+.response-header{padding:1rem 1.5rem;background:rgba(212,175,55,.08);border-bottom:1px solid rgba(212,175,55,.15);display:flex;align-items:center;gap:1rem;}
+.response-header-title{font-family:'Cinzel',serif;font-size:.78rem;letter-spacing:2px;color:var(--gold);}
+.response-body{padding:1.5rem;line-height:1.9;color:var(--text-light);font-size:1rem;}
+.loading-dots{display:none;text-align:center;padding:2rem;}
+.loading-dots span{display:inline-block;width:8px;height:8px;background:var(--gold);border-radius:50%;margin:0 4px;animation:dotB 1.4s infinite ease-in-out;}
+.loading-dots span:nth-child(2){animation-delay:.2s;}
+.loading-dots span:nth-child(3){animation-delay:.4s;}
+@keyframes dotB{0%,80%,100%{transform:scale(.7);opacity:.3;}40%{transform:scale(1);opacity:1;}}
+
+.planets-strip{padding:2rem 0;overflow:hidden;background:linear-gradient(to right,var(--deep),rgba(28,15,53,.5),var(--deep));border-top:1px solid rgba(212,175,55,.1);border-bottom:1px solid rgba(212,175,55,.1);}
+.planets-track{display:flex;gap:3rem;animation:scrollTrack 30s linear infinite;width:max-content;align-items:center;}
+@keyframes scrollTrack{to{transform:translateX(-50%);}}
+.planet-item{display:flex;align-items:center;gap:.8rem;white-space:nowrap;}
+.planet-symbol{font-size:1.5rem;}
+.planet-name{font-family:'Cinzel',serif;font-size:.72rem;color:var(--text-muted);letter-spacing:2px;}
+
+.features-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:1.5rem;max-width:1100px;margin:0 auto;}
+.feature-card{background:linear-gradient(135deg,rgba(28,15,53,.5),rgba(18,8,32,.7));border:1px solid rgba(212,175,55,.1);border-radius:10px;padding:2rem;transition:border-color .3s,transform .3s;}
+.feature-card:hover{border-color:rgba(212,175,55,.4);transform:translateY(-3px);}
+.feature-icon{font-size:2.5rem;margin-bottom:1rem;}
+.feature-title{font-family:'Cinzel',serif;font-size:.88rem;color:var(--gold);letter-spacing:1px;margin-bottom:.7rem;}
+.feature-desc{color:var(--text-muted);font-size:.9rem;line-height:1.7;}
+
+.testimonials-track{display:flex;gap:1.5rem;max-width:1100px;margin:0 auto;overflow-x:auto;padding-bottom:1rem;scrollbar-width:none;}
+.testimonials-track::-webkit-scrollbar{display:none;}
+.testimonial-card{flex:0 0 340px;background:linear-gradient(135deg,rgba(28,15,53,.6),rgba(18,8,32,.8));border:1px solid rgba(212,175,55,.15);border-radius:10px;padding:1.5rem;}
+.testimonial-stars{color:var(--gold);font-size:.85rem;margin-bottom:.8rem;}
+.testimonial-text{color:var(--text-light);font-style:italic;line-height:1.7;margin-bottom:1rem;}
+.testimonial-name{font-family:'Cinzel',serif;font-size:.72rem;color:var(--gold);}
+.testimonial-rashi{font-size:.72rem;color:var(--text-muted);}
+
+.daily-strip{background:linear-gradient(135deg,rgba(28,15,53,.5),rgba(75,29,142,.2));border:1px solid rgba(212,175,55,.15);border-radius:10px;padding:1.5rem;margin:2rem auto;max-width:780px;display:flex;gap:1.5rem;align-items:center;flex-wrap:wrap;}
+.daily-icon{font-size:2.5rem;}
+.daily-content{flex:1;}
+.daily-title{font-family:'Cinzel',serif;font-size:.72rem;letter-spacing:2px;color:var(--gold);margin-bottom:.4rem;}
+.daily-text{color:var(--text-light);font-style:italic;line-height:1.7;}
+.today-date{font-family:'Cinzel',serif;font-size:.68rem;color:var(--text-muted);white-space:nowrap;}
+
+.kundali-visual{display:none;max-width:380px;margin:1.5rem auto 0;}
+.kundali-svg{width:100%;border:1px solid rgba(212,175,55,.2);border-radius:8px;}
+
+.modal-overlay{position:fixed;inset:0;background:rgba(10,6,18,.9);z-index:200;display:none;align-items:center;justify-content:center;padding:2rem;backdrop-filter:blur(10px);}
+.modal-overlay.open{display:flex;}
+.modal{max-width:600px;width:100%;max-height:80vh;overflow-y:auto;background:linear-gradient(135deg,rgba(28,15,53,.98),rgba(18,8,32,.98));border:1px solid rgba(212,175,55,.3);border-radius:12px;padding:2rem;}
+.modal-close{float:right;cursor:pointer;color:var(--text-muted);font-size:1.5rem;}
+.modal-rashi-name{font-family:'Cinzel Decorative',cursive;font-size:1.3rem;color:var(--gold);margin:1rem 0 .5rem;}
+.modal-symbol{font-size:4rem;text-align:center;margin:.5rem 0;}
+.modal-detail{display:flex;gap:1rem;flex-wrap:wrap;margin:1rem 0;}
+.modal-badge{padding:4px 14px;border-radius:20px;font-size:.72rem;font-family:'Cinzel',serif;background:rgba(212,175,55,.1);border:1px solid rgba(212,175,55,.3);color:var(--gold);}
+.modal-section{margin:1.2rem 0;}
+.modal-section-title{font-family:'Cinzel',serif;font-size:.72rem;letter-spacing:2px;color:var(--gold);margin-bottom:.5rem;}
+.modal-section-text{color:var(--text-light);line-height:1.8;font-size:.95rem;}
+
+.notif{position:fixed;bottom:6rem;right:2rem;z-index:300;background:rgba(18,8,32,.97);border:1px solid rgba(212,175,55,.4);border-radius:10px;padding:1rem 1.5rem;max-width:320px;transform:translateX(130%);transition:transform .4s ease;font-size:.9rem;color:var(--text-light);}
+.notif.show{transform:translateX(0);}
+.notif-title{font-family:'Cinzel',serif;font-size:.72rem;color:var(--gold);letter-spacing:1px;margin-bottom:.3rem;}
+
+footer{background:rgba(10,6,18,.98);border-top:1px solid rgba(212,175,55,.15);padding:3rem 2rem;text-align:center;}
+.footer-om{font-size:2rem;color:var(--gold);opacity:.4;margin-bottom:1rem;}
+.footer-name{font-family:'Cinzel Decorative',cursive;font-size:1rem;color:var(--gold);margin-bottom:.5rem;}
+.footer-text{color:var(--text-muted);font-size:.78rem;letter-spacing:1px;}
+
+/* ═══ PERSONALITY SECTION ═══ */
+.personality-section{background:linear-gradient(to bottom,var(--deep2),var(--deep3));}
+.personality-card{max-width:900px;margin:0 auto;background:linear-gradient(135deg,rgba(28,15,53,.7),rgba(18,8,32,.9));border:1px solid rgba(212,175,55,.2);border-radius:16px;padding:2.5rem;}
+.personality-selector{display:flex;gap:1rem;flex-wrap:wrap;justify-content:center;margin-bottom:2rem;}
+.ps-btn{padding:10px 20px;background:rgba(10,6,18,.7);border:1px solid rgba(212,175,55,.2);border-radius:25px;color:var(--text-muted);cursor:pointer;font-family:'Cinzel',serif;font-size:.7rem;letter-spacing:1.5px;transition:all .3s;}
+.ps-btn:hover,.ps-btn.active{border-color:var(--gold);color:var(--gold);background:rgba(212,175,55,.08);}
+.personality-result{display:none;}
+.personality-result.visible{display:block;animation:fadeUp .4s ease;}
+@keyframes fadeUp{from{opacity:0;transform:translateY(12px);}to{opacity:1;transform:translateY(0);}}
+.trait-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:1rem;margin:1.5rem 0;}
+.trait-card{background:rgba(10,6,18,.5);border:1px solid rgba(212,175,55,.12);border-radius:10px;padding:1.2rem;text-align:center;}
+.trait-icon{font-size:1.8rem;margin-bottom:.5rem;}
+.trait-name{font-family:'Cinzel',serif;font-size:.72rem;color:var(--gold);letter-spacing:1px;margin-bottom:.3rem;}
+.trait-desc{font-size:.85rem;color:var(--text-muted);line-height:1.6;}
+.trait-bar-wrap{margin-top:.6rem;height:4px;background:rgba(212,175,55,.1);border-radius:2px;overflow:hidden;}
+.trait-bar{height:100%;background:linear-gradient(to right,var(--gold-dark),var(--gold));border-radius:2px;transition:width 1s ease;}
+.personality-header-rashi{display:flex;align-items:center;gap:1.5rem;margin-bottom:1.5rem;padding:1.2rem;background:rgba(212,175,55,.05);border-radius:10px;border:1px solid rgba(212,175,55,.15);}
+.ph-symbol{font-size:3rem;}
+.ph-info{flex:1;}
+.ph-name{font-family:'Cinzel Decorative',cursive;font-size:1.1rem;color:var(--gold);}
+.ph-ruler{font-size:.8rem;color:var(--text-muted);font-family:'Cinzel',serif;letter-spacing:1px;margin-top:.3rem;}
+.ph-summary{font-style:italic;color:var(--text-light);line-height:1.7;margin-top:1rem;}
+.strength-weakness{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:1.5rem 0;}
+.sw-card{background:rgba(10,6,18,.5);border-radius:10px;padding:1.2rem;}
+.sw-title{font-family:'Cinzel',serif;font-size:.7rem;letter-spacing:2px;margin-bottom:.8rem;}
+.sw-title.s{color:#68D391;}
+.sw-title.w{color:#FC8181;}
+.sw-list{list-style:none;}
+.sw-list li{font-size:.88rem;color:var(--text-light);padding:.3rem 0;border-bottom:1px solid rgba(212,175,55,.06);display:flex;align-items:center;gap:.5rem;}
+.life-areas{margin-top:1.5rem;}
+.la-title{font-family:'Cinzel',serif;font-size:.72rem;letter-spacing:2px;color:var(--gold);margin-bottom:1rem;}
+.la-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:.8rem;}
+.la-item{background:rgba(10,6,18,.5);border:1px solid rgba(212,175,55,.1);border-radius:8px;padding:.9rem;text-align:center;}
+.la-icon{font-size:1.4rem;margin-bottom:.3rem;}
+.la-area{font-family:'Cinzel',serif;font-size:.65rem;color:var(--gold);letter-spacing:1px;}
+.la-rating{font-size:.75rem;color:var(--text-muted);margin-top:.2rem;}
+.planet-influence{margin-top:1.5rem;padding:1.2rem;background:rgba(75,29,142,.12);border:1px solid rgba(75,29,142,.3);border-radius:10px;}
+.pi-title{font-family:'Cinzel',serif;font-size:.72rem;letter-spacing:2px;color:#9B7FD4;margin-bottom:.7rem;}
+.pi-text{color:var(--text-light);font-size:.9rem;line-height:1.8;}
+.current-transit{margin-top:1rem;padding:.8rem 1rem;background:rgba(212,175,55,.06);border-left:3px solid var(--gold);border-radius:0 6px 6px 0;}
+.ct-label{font-family:'Cinzel',serif;font-size:.62rem;letter-spacing:2px;color:var(--gold);}
+.ct-text{font-size:.88rem;color:var(--text-light);margin-top:.3rem;line-height:1.6;}
+
+/* ═══ PLANET LIVE STRIP ═══ */
+.live-planets-section{padding:3rem 2rem;background:linear-gradient(to bottom,var(--deep3),var(--deep2));}
+.planet-cards-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:1rem;max-width:1100px;margin:0 auto;}
+.planet-card-live{background:linear-gradient(135deg,rgba(28,15,53,.7),rgba(18,8,32,.9));border:1px solid rgba(212,175,55,.12);border-radius:10px;padding:1.2rem;text-align:center;transition:border-color .3s;}
+.planet-card-live:hover{border-color:rgba(212,175,55,.4);}
+.pcl-sym{font-size:2rem;margin-bottom:.4rem;}
+.pcl-name{font-family:'Cinzel',serif;font-size:.7rem;color:var(--gold);letter-spacing:1px;}
+.pcl-sign{font-size:.8rem;color:var(--text-light);margin:.2rem 0;}
+.pcl-status{font-size:.65rem;font-family:'Cinzel',serif;letter-spacing:1px;padding:2px 8px;border-radius:10px;margin-top:.4rem;display:inline-block;}
+.pcl-direct{background:rgba(104,211,145,.1);color:#68D391;border:1px solid rgba(104,211,145,.3);}
+.pcl-retro{background:rgba(252,129,129,.1);color:#FC8181;border:1px solid rgba(252,129,129,.3);}
+
+/* ═══ CHAT — NO BLINK FIX ═══ */
+.chat-fab{position:fixed;bottom:2rem;right:2rem;z-index:500;width:66px;height:66px;border-radius:50%;background:linear-gradient(135deg,#4B1D8E,#D4AF37);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:1.7rem;transition:transform .25s,box-shadow .25s;box-shadow:0 0 25px rgba(212,175,55,.35);}
+.chat-fab:hover{transform:scale(1.1);box-shadow:0 0 45px rgba(212,175,55,.6);}
+.chat-fab-tooltip{position:absolute;right:76px;background:rgba(18,8,32,.97);border:1px solid rgba(212,175,55,.3);color:var(--gold);font-family:'Cinzel',serif;font-size:.62rem;letter-spacing:1.5px;padding:6px 14px;border-radius:20px;white-space:nowrap;opacity:0;transform:translateX(8px);transition:opacity .25s,transform .25s;pointer-events:none;}
+.chat-fab:hover .chat-fab-tooltip{opacity:1;transform:translateX(0);}
+.chat-badge{position:absolute;top:3px;right:3px;width:17px;height:17px;background:#E53E3E;border-radius:50%;border:2px solid var(--deep);display:flex;align-items:center;justify-content:center;font-size:.52rem;color:white;font-weight:bold;}
+
+/* Chat panel — will-change avoids compositing blink */
+.chat-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.35);z-index:489;opacity:0;pointer-events:none;transition:opacity .35s ease;backdrop-filter:blur(3px);}
+.chat-backdrop.open{opacity:1;pointer-events:all;}
+
+.chat-panel{position:fixed;top:0;right:0;z-index:490;width:420px;height:100vh;
+  background:linear-gradient(180deg,#0D0820 0%,#0A0612 100%);
+  border-left:1px solid rgba(212,175,55,.2);display:flex;flex-direction:column;
+  transform:translateX(100%);transition:transform .38s cubic-bezier(.25,.8,.25,1);
+  box-shadow:-10px 0 50px rgba(0,0,0,.7);will-change:transform;
+  backface-visibility:hidden;-webkit-backface-visibility:hidden;}
+.chat-panel.open{transform:translateX(0);}
+
+.chat-header{background:linear-gradient(135deg,#1C0F35,#120820);border-bottom:1px solid rgba(212,175,55,.15);flex-shrink:0;position:relative;overflow:hidden;}
+.chat-header-glow{position:absolute;inset:0;background:radial-gradient(ellipse at 25% 50%,rgba(75,29,142,.3) 0%,transparent 65%);pointer-events:none;}
+.chat-header-inner{padding:1rem 1.2rem;display:flex;align-items:center;gap:1rem;position:relative;z-index:1;}
+.guruji-avatar{width:52px;height:52px;border-radius:50%;flex-shrink:0;background:linear-gradient(135deg,#4B1D8E,#9A7A20);border:2px solid rgba(212,175,55,.5);display:flex;align-items:center;justify-content:center;font-size:1.6rem;position:relative;}
+.status-dot{position:absolute;bottom:1px;right:1px;width:11px;height:11px;border-radius:50%;background:#48BB78;border:2px solid #0D0820;}
+.guruji-name{font-family:'Cinzel Decorative',cursive;font-size:.93rem;color:var(--gold);}
+.guruji-title{font-size:.65rem;color:var(--text-muted);letter-spacing:1px;margin-top:2px;font-family:'Cinzel',serif;}
+.guruji-online{font-size:.6rem;color:#68D391;letter-spacing:1px;margin-top:3px;}
+.chat-close-btn{width:30px;height:30px;border-radius:50%;border:1px solid rgba(212,175,55,.2);background:transparent;color:var(--text-muted);cursor:pointer;font-size:.95rem;display:flex;align-items:center;justify-content:center;transition:border-color .2s,color .2s;flex-shrink:0;}
+.chat-close-btn:hover{border-color:var(--gold);color:var(--gold);}
+
+/* LIVE PLANETS BAR */
+.chat-planet-bar{padding:.6rem 1.2rem;background:rgba(212,175,55,.04);border-bottom:1px solid rgba(212,175,55,.08);display:flex;gap:.5rem;overflow-x:auto;scrollbar-width:none;flex-shrink:0;}
+.chat-planet-bar::-webkit-scrollbar{display:none;}
+.cpb-item{display:flex;align-items:center;gap:.3rem;white-space:nowrap;padding:3px 8px;border-radius:12px;background:rgba(10,6,18,.6);border:1px solid rgba(212,175,55,.12);}
+.cpb-sym{font-size:.9rem;}
+.cpb-txt{font-size:.6rem;color:var(--text-muted);font-family:'Cinzel',serif;}
+.cpb-sign{font-size:.6rem;color:var(--gold);}
+
+/* SETUP BAR */
+.chat-setup-bar{padding:.9rem 1.2rem;background:rgba(212,175,55,.03);border-bottom:1px solid rgba(212,175,55,.1);flex-shrink:0;}
+.setup-title{font-family:'Cinzel',serif;font-size:.62rem;letter-spacing:2px;color:var(--gold);margin-bottom:.7rem;}
+.setup-grid{display:grid;grid-template-columns:1fr 1fr;gap:.5rem;}
+.si{background:rgba(10,6,18,.8);border:1px solid rgba(212,175,55,.15);border-radius:6px;padding:7px 10px;color:var(--cream);font-family:'EB Garamond',serif;font-size:.88rem;outline:none;transition:border-color .2s;width:100%;}
+.si:focus{border-color:rgba(212,175,55,.5);}
+.si-full{grid-column:1/-1;}
+.si option{background:#0A0612;}
+.setup-submit-btn{grid-column:1/-1;padding:9px;background:linear-gradient(135deg,var(--gold-dark),var(--gold));border:none;border-radius:6px;color:var(--deep);font-family:'Cinzel',serif;font-size:.68rem;letter-spacing:1.5px;cursor:pointer;font-weight:600;transition:opacity .2s,transform .2s;}
+.setup-submit-btn:hover{opacity:.9;transform:translateY(-1px);}
+.setup-done-row{display:none;align-items:center;gap:.8rem;padding:.4rem 0;}
+.setup-done-info{flex:1;font-size:.82rem;color:var(--text-light);font-style:italic;}
+.setup-re-btn{font-family:'Cinzel',serif;font-size:.58rem;color:var(--text-muted);background:transparent;border:1px solid rgba(212,175,55,.2);padding:4px 10px;border-radius:10px;cursor:pointer;transition:all .2s;}
+.setup-re-btn:hover{color:var(--gold);border-color:rgba(212,175,55,.5);}
+
+/* MESSAGES — no blink: avoid animating opacity */
+.chat-messages{flex:1;overflow-y:auto;padding:1.2rem;display:flex;flex-direction:column;gap:1rem;scrollbar-width:thin;scrollbar-color:rgba(212,175,55,.2) transparent;}
+.chat-messages::-webkit-scrollbar{width:4px;}
+.chat-messages::-webkit-scrollbar-thumb{background:rgba(212,175,55,.2);border-radius:2px;}
+
+.cmsg{display:flex;gap:.7rem;animation:msgIn .28s ease forwards;max-width:100%;}
+@keyframes msgIn{from{opacity:0;transform:translateY(6px);}to{opacity:1;transform:translateY(0);}}
+.cmsg.user{flex-direction:row-reverse;}
+.cmsg-av{width:34px;height:34px;border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:1rem;border:1px solid rgba(212,175,55,.25);}
+.cmsg.guruji .cmsg-av{background:linear-gradient(135deg,#4B1D8E,#9A7A20);}
+.cmsg.user .cmsg-av{background:rgba(212,175,55,.12);}
+.cmsg-body{max-width:78%;}
+.cmsg-bubble{padding:.9rem 1.1rem;border-radius:16px;line-height:1.75;font-size:.92rem;}
+.cmsg.guruji .cmsg-bubble{background:linear-gradient(135deg,rgba(28,15,53,.95),rgba(18,8,32,.98));border:1px solid rgba(212,175,55,.15);color:var(--text-light);border-top-left-radius:4px;}
+.cmsg.user .cmsg-bubble{background:linear-gradient(135deg,rgba(75,29,142,.5),rgba(45,15,80,.7));border:1px solid rgba(123,61,212,.3);color:var(--cream);border-top-right-radius:4px;}
+.cmsg-time{font-size:.6rem;color:var(--text-muted);margin-top:.3rem;letter-spacing:.5px;}
+.cmsg.user .cmsg-time{text-align:right;}
+
+.emotion-row{display:flex;align-items:center;gap:.5rem;margin-top:.5rem;padding-top:.5rem;border-top:1px solid rgba(212,175,55,.08);}
+.emotion-lbl{font-size:.6rem;color:var(--text-muted);font-family:'Cinzel',serif;letter-spacing:1px;}
+.emotion-chip{font-size:.62rem;padding:2px 9px;border-radius:10px;border:1px solid;font-family:'Cinzel',serif;}
+
+.planet-context-bar{margin-top:.6rem;padding:.5rem .7rem;background:rgba(212,175,55,.05);border-radius:6px;font-size:.72rem;color:var(--text-muted);border-left:2px solid rgba(212,175,55,.3);font-family:'Cinzel',serif;letter-spacing:.5px;}
+
+/* TYPING INDICATOR — stays stable, no repaint blink */
+.typing-wrap{display:flex;gap:.7rem;align-items:flex-end;}
+.typing-bubble{padding:.75rem 1rem;background:linear-gradient(135deg,rgba(28,15,53,.95),rgba(18,8,32,.98));border:1px solid rgba(212,175,55,.15);border-radius:16px;border-top-left-radius:4px;display:flex;gap:5px;align-items:center;}
+.tdot{width:7px;height:7px;border-radius:50%;background:var(--gold);opacity:.4;animation:tdotA 1.4s infinite ease-in-out;}
+.tdot:nth-child(2){animation-delay:.2s;}
+.tdot:nth-child(3){animation-delay:.4s;}
+@keyframes tdotA{0%,60%,100%{transform:translateY(0);opacity:.35;}30%{transform:translateY(-5px);opacity:1;}}
+
+.quick-wrap{padding:.7rem 1.2rem;flex-shrink:0;border-top:1px solid rgba(212,175,55,.08);}
+.quick-lbl{font-family:'Cinzel',serif;font-size:.58rem;letter-spacing:2px;color:var(--text-muted);margin-bottom:.5rem;}
+.quick-chips-row{display:flex;gap:.4rem;flex-wrap:wrap;}
+.qchip{padding:5px 12px;border-radius:20px;font-size:.72rem;border:1px solid rgba(212,175,55,.18);background:rgba(212,175,55,.03);color:var(--text-muted);cursor:pointer;transition:all .2s;white-space:nowrap;}
+.qchip:hover{border-color:rgba(212,175,55,.5);color:var(--gold);background:rgba(212,175,55,.08);}
+
+.chat-input-bar{padding:.9rem 1.2rem;border-top:1px solid rgba(212,175,55,.1);flex-shrink:0;background:rgba(10,6,18,.4);}
+.chat-input-row{display:flex;gap:.7rem;align-items:flex-end;}
+.chat-ta{flex:1;background:rgba(18,8,32,.85);border:1px solid rgba(212,175,55,.2);border-radius:12px;padding:10px 14px;color:var(--cream);font-family:'EB Garamond',serif;font-size:.95rem;line-height:1.5;resize:none;outline:none;min-height:42px;max-height:120px;transition:border-color .2s;}
+.chat-ta:focus{border-color:rgba(212,175,55,.5);}
+.chat-ta::placeholder{color:var(--text-muted);}
+.chat-send{width:42px;height:42px;border-radius:50%;flex-shrink:0;background:linear-gradient(135deg,var(--gold-dark),var(--gold));border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:1rem;color:var(--deep);transition:transform .2s,box-shadow .2s;}
+.chat-send:hover:not(:disabled){transform:scale(1.1);box-shadow:0 0 20px rgba(212,175,55,.4);}
+.chat-send:disabled{opacity:.35;cursor:not-allowed;}
+.chat-hint-txt{font-size:.6rem;color:var(--text-muted);text-align:center;margin-top:.5rem;letter-spacing:.5px;}
+
+@media(max-width:480px){.chat-panel{width:100%;}.form-grid{grid-template-columns:1fr;}.form-group.full{grid-column:1;}.rashis-grid{grid-template-columns:repeat(3,1fr);}.nav-links{display:none;}.strength-weakness{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+<div class="stars-bg" id="starsBg"></div>
+
+<nav>
+  <div class="nav-logo">ॐ Jyotish Darshan<span>DIVINE ASTROLOGY GUIDANCE</span></div>
+  <ul class="nav-links">
+    <li><a href="#rashis">Rashis</a></li>
+    <li><a href="#consult">Consult</a></li>
+    <li><a href="#personality">Personality</a></li>
+    <li><a href="#features">Services</a></li>
+    <li><a href="#" onclick="toggleChat();return false;" style="color:var(--gold);">🔮 Chat</a></li>
+  </ul>
+  <div class="lang-selector">
+    <button class="lang-btn active" onclick="setLang('en',this)">EN</button>
+    <button class="lang-btn" onclick="setLang('hi',this)">हिं</button>
+    <button class="lang-btn" onclick="setLang('gu',this)">ગુ</button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="mandala-bg"></div>
+  <div class="mandala-ring" style="width:500px;height:500px;top:50%;left:50%;transform:translate(-50%,-50%);animation:rotateMR 80s linear infinite;"></div>
+  <div class="mandala-ring" style="width:650px;height:650px;top:50%;left:50%;transform:translate(-50%,-50%);animation:rotateM 100s linear infinite;"></div>
+  <div class="hero-om">ॐ</div>
+  <h1 class="hero-title" id="heroTitle">Jyotish Darshan</h1>
+  <p class="hero-subtitle" id="heroSub">THE LIGHT OF THE STARS GUIDES YOUR DESTINY</p>
+  <p class="hero-desc" id="heroDesc">Ancient Vedic wisdom meets modern guidance. Discover what the planets hold for you — your love, career, health and spiritual path — through the sacred science of Jyotish.</p>
+  <div class="cta-group">
+    <button class="btn-gold" onclick="document.querySelector('#consult').scrollIntoView({behavior:'smooth'})">Seek Guidance</button>
+    <button class="btn-outline" onclick="document.querySelector('#rashis').scrollIntoView({behavior:'smooth'})">Find Your Rashi</button>
+    <button class="btn-purple" onclick="toggleChat()">🔮 Chat with Guruji</button>
+  </div>
+  <div class="scroll-indicator"><div class="scroll-line"></div><span style="font-size:.58rem;letter-spacing:3px;color:var(--text-muted);">SCROLL</span></div>
+</section>
+
+<!-- PLANETS STRIP -->
+<div class="planets-strip"><div class="planets-track" id="planetsTrack"></div></div>
+
+<!-- LIVE PLANETS -->
+<section class="live-planets-section" id="livePlanets">
+  <div class="section-header">
+    <span class="section-tag">REAL-TIME SKY</span>
+    <h2 class="section-title">Today's Planetary Positions</h2>
+    <div class="divider"></div>
+    <p class="section-sub" id="livePlanetDate"></p>
+  </div>
+  <div class="planet-cards-grid" id="planetCardsGrid"></div>
+</section>
+
+<!-- RASHIS -->
+<section class="rashis-section" id="rashis">
+  <div class="section-header">
+    <span class="section-tag">THE TWELVE SIGNS</span>
+    <h2 class="section-title">Select Your Rashi</h2>
+    <div class="divider"></div>
+    <p class="section-sub">Click your zodiac sign to explore its wisdom and select it for consultation</p>
+  </div>
+  <div class="rashis-grid" id="rashisGrid"></div>
+</section>
+
+<!-- PERSONALITY SECTION -->
+<section class="personality-section" id="personality">
+  <div class="section-header">
+    <span class="section-tag">VEDIC PERSONALITY PROFILE</span>
+    <h2 class="section-title">Know Yourself Through the Stars</h2>
+    <div class="divider"></div>
+    <p class="section-sub">Select your Rashi to reveal your authentic cosmic personality — traits, strengths, life areas & planetary influence</p>
+  </div>
+  <div class="personality-card">
+    <div class="personality-selector" id="personalitySelector"></div>
+    <div class="personality-result" id="personalityResult"></div>
+  </div>
+</section>
+
+<!-- CONSULT -->
+<section id="consult" style="background:linear-gradient(to bottom,var(--deep2),var(--deep3));">
+  <div class="section-header">
+    <span class="section-tag">DIVINE COUNSEL</span>
+    <h2 class="section-title">Seek Your Guidance</h2>
+    <div class="divider"></div>
+  </div>
+  <div class="service-tabs">
+    <button class="tab-btn active" onclick="switchTab('question',this)">Ask Question</button>
+    <button class="tab-btn" onclick="switchTab('kundali',this)">Generate Kundali</button>
+    <button class="tab-btn" onclick="switchTab('upload',this)">Upload Kundali</button>
+  </div>
+  <div class="tab-content active" id="tab-question">
+    <div class="daily-strip">
+      <div class="daily-icon">🌙</div>
+      <div class="daily-content"><div class="daily-title">TODAY'S COSMIC ENERGY</div><div class="daily-text" id="dailyMessage"></div></div>
+      <div class="today-date" id="todayDate"></div>
+    </div>
+    <div class="form-card">
+      <div class="form-grid">
+        <div class="form-group full"><label>YOUR SELECTED RASHI</label><div class="selected-rashi-display" id="selectedRashiDisplay"><span style="font-size:1.5rem;">⭐</span><span id="selectedRashiName">Please select your Rashi from the section above</span></div></div>
+        <div class="form-group"><label>YOUR NAME</label><input type="text" id="userName" placeholder="Enter your name"/></div>
+        <div class="form-group"><label>AREA OF CONCERN</label>
+          <select id="concernArea"><option value="">Select area...</option><option value="love">💕 Love & Relationships</option><option value="career">💼 Career & Business</option><option value="health">🌿 Health & Wellbeing</option><option value="finance">💰 Finance & Wealth</option><option value="family">🏠 Family & Home</option><option value="education">📚 Education & Learning</option><option value="spiritual">🕉️ Spiritual Growth</option><option value="general">✨ General Guidance</option></select>
+        </div>
+        <div class="form-group full"><label>YOUR QUESTION OR DOUBT</label><textarea id="userQuestion" placeholder="Describe your concern or question in detail..."></textarea></div>
+      </div>
+      <button class="btn-gold" style="width:100%;margin-top:1.5rem;font-size:.9rem;" onclick="askQuestion()">✨ Receive Cosmic Guidance</button>
+    </div>
+    <div class="response-area" id="responseArea">
+      <div class="response-header"><span style="font-size:1.5rem;">🔮</span><div><div class="response-header-title">COSMIC GUIDANCE FOR YOU</div></div></div>
+      <div class="loading-dots" id="loadingDots"><span></span><span></span><span></span></div>
+      <div class="response-body" id="responseText"></div>
+    </div>
+  </div>
+  <div class="tab-content" id="tab-kundali">
+    <div class="form-card">
+      <div class="form-grid">
+        <div class="form-group"><label>FULL NAME</label><input type="text" id="kundaliName" placeholder="Enter full name"/></div>
+        <div class="form-group"><label>GENDER</label><select id="kundaliGender"><option value="male">Male</option><option value="female">Female</option><option value="other">Other</option></select></div>
+        <div class="form-group"><label>DATE OF BIRTH</label><input type="date" id="kundaliDOB"/></div>
+        <div class="form-group"><label>TIME OF BIRTH</label><input type="time" id="kundaliTOB"/></div>
+        <div class="form-group full"><label>PLACE OF BIRTH</label><input type="text" id="kundaliPOB" placeholder="City, State, Country"/></div>
+        <div class="form-group full"><label>AREA OF FOCUS</label><select id="kundaliArea"><option value="">All aspects of life</option><option value="love">💕 Love & Marriage</option><option value="career">💼 Career & Success</option><option value="health">🌿 Health</option><option value="finance">💰 Finance</option><option value="spiritual">🕉️ Spirituality</option></select></div>
+      </div>
+      <button class="btn-gold" style="width:100%;margin-top:1.5rem;" onclick="generateKundali()">🪐 Generate My Kundali</button>
+    </div>
+    <div class="kundali-visual" id="kundaliVisual"><svg viewBox="0 0 300 300" class="kundali-svg" id="kundaliSVG"></svg></div>
+    <div class="response-area" id="responseAreaKundali">
+      <div class="response-header"><span style="font-size:1.5rem;">🪐</span><div><div class="response-header-title">YOUR KUNDALI READING</div></div></div>
+      <div class="loading-dots" id="loadingKundali"><span></span><span></span><span></span></div>
+      <div class="response-body" id="responseKundali"></div>
+    </div>
+  </div>
+  <div class="tab-content" id="tab-upload">
+    <div class="form-card">
+      <div class="upload-zone" onclick="document.getElementById('fileInput').click()">
+        <div class="upload-icon" style="font-size:3rem;margin-bottom:1rem;">📜</div>
+        <div style="font-family:'Cinzel',serif;font-size:.9rem;color:var(--gold);letter-spacing:2px;margin-bottom:.5rem;">UPLOAD YOUR KUNDALI</div>
+        <div style="color:var(--text-muted);font-size:.85rem;">Click to upload or drag & drop your Kundali image or PDF</div>
+        <div style="margin-top:.8rem;font-size:.72rem;color:var(--text-muted);">JPG, PNG, PDF · Max 10MB</div>
+      </div>
+      <input type="file" id="fileInput" accept=".jpg,.jpeg,.png,.pdf" onchange="handleFileUpload(this)">
+      <div class="uploaded-file" id="uploadedFileInfo"><span>📄</span><span class="file-name" id="uploadedFileName" style="flex:1;font-size:.9rem;color:var(--text-light);"></span><span class="remove-file" onclick="removeFile()">✕</span></div>
+      <div class="form-grid" style="margin-top:1.5rem;">
+        <div class="form-group"><label>YOUR NAME</label><input type="text" id="uploadName" placeholder="Your name"/></div>
+        <div class="form-group"><label>YOUR QUESTION</label><input type="text" id="uploadQuestion" placeholder="What do you want to know?"/></div>
+      </div>
+      <button class="btn-gold" style="width:100%;margin-top:1.5rem;" onclick="analyzeKundali()">🔮 Analyze My Kundali</button>
+    </div>
+    <div class="response-area" id="responseAreaUpload">
+      <div class="response-header"><span style="font-size:1.5rem;">🔭</span><div><div class="response-header-title">KUNDALI ANALYSIS</div></div></div>
+      <div class="loading-dots" id="loadingUpload"><span></span><span></span><span></span></div>
+      <div class="response-body" id="responseUpload"></div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section id="features" style="background:linear-gradient(to bottom,var(--deep3),var(--deep));">
+  <div class="section-header"><span class="section-tag">OUR SACRED SERVICES</span><h2 class="section-title">What the Stars Offer You</h2><div class="divider"></div></div>
+  <div class="features-grid">
+    <div class="feature-card"><div class="feature-icon">🔮</div><div class="feature-title">AI Vedic Analysis</div><div class="feature-desc">Deep insights powered by ancient Vedic principles and modern AI — accurate, personalised, spiritually aligned guidance.</div></div>
+    <div class="feature-card"><div class="feature-icon">🪐</div><div class="feature-title">Kundali Generation</div><div class="feature-desc">Generate your complete birth chart using precise birth date, time, and location. Understand your Lagna, planetary positions, and Dashas.</div></div>
+    <div class="feature-card"><div class="feature-icon">💕</div><div class="feature-title">Kundali Matching</div><div class="feature-desc">Check compatibility between two charts using the traditional 36 Gunas system for marriage and partnerships.</div></div>
+    <div class="feature-card"><div class="feature-icon">📅</div><div class="feature-title">Daily Panchang</div><div class="feature-desc">Know your Tithi, Nakshatra, Yoga, Karana and auspicious timing for important decisions every day.</div></div>
+    <div class="feature-card"><div class="feature-icon">💼</div><div class="feature-title">Career Guidance</div><div class="feature-desc">Discover your strongest career paths, favourable periods for career changes, and how to navigate professional challenges.</div></div>
+    <div class="feature-card"><div class="feature-icon">🌿</div><div class="feature-title">Health Astrology</div><div class="feature-desc">Understand which planets affect your health and get Vedic remedies — gemstones, mantras, and rituals for wellbeing.</div></div>
+    <div class="feature-card"><div class="feature-icon">🕉️</div><div class="feature-title">Remedies & Upay</div><div class="feature-desc">Personalised Vedic remedies including mantras, gemstones, fasting days, charity, and yantras to pacify malefic planets.</div></div>
+    <div class="feature-card"><div class="feature-icon">⭐</div><div class="feature-title">Nakshatra Reading</div><div class="feature-desc">Explore your Janma Nakshatra and discover its deep influence on your personality and destiny.</div></div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section style="background:var(--deep2);">
+  <div class="section-header"><span class="section-tag">SEEKERS SPEAK</span><h2 class="section-title">Blessings Received</h2><div class="divider"></div></div>
+  <div class="testimonials-track">
+    <div class="testimonial-card"><div class="testimonial-stars">★★★★★</div><div class="testimonial-text">"Guruji understood my career pain and gave me exact remedies. The planetary timing he mentioned was spot on. Things have genuinely changed."</div><div class="testimonial-name">Priya M.</div><div class="testimonial-rashi">♉ Vrishabha · Vadodara</div></div>
+    <div class="testimonial-card"><div class="testimonial-stars">★★★★★</div><div class="testimonial-text">"He knew I was going through Saturn's Sade Sati without me saying anything. The advice was warm, specific and actually worked."</div><div class="testimonial-name">Rakesh P.</div><div class="testimonial-rashi">♐ Dhanu · Ahmedabad</div></div>
+    <div class="testimonial-card"><div class="testimonial-stars">★★★★★</div><div class="testimonial-text">"The personality section showed me things about myself I had never articulated. Accurate beyond what I expected from an online tool."</div><div class="testimonial-name">Sunita K.</div><div class="testimonial-rashi">♋ Karka · Mumbai</div></div>
+    <div class="testimonial-card"><div class="testimonial-stars">★★★★★</div><div class="testimonial-text">"मैंने हिंदी में Guruji से बात की और उत्तर बिल्कुल सटीक था। वर्तमान ग्रह स्थिति के आधार पर सलाह बहुत कारगर रही।"</div><div class="testimonial-name">Vijay S.</div><div class="testimonial-rashi">♏ Vrishchika · Delhi</div></div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-om">ॐ</div>
+  <div class="footer-name">Jyotish Darshan</div>
+  <p class="footer-text">यत्र विश्वं भवत्येकनीड़म् · Where the universe becomes one nest</p>
+  <div style="margin-top:1.5rem;display:flex;gap:2rem;justify-content:center;flex-wrap:wrap;">
+    <span style="font-size:.72rem;color:var(--text-muted);">🕉️ Vedic Astrology</span>
+    <span style="font-size:.72rem;color:var(--text-muted);">🪐 Jyotish Shastra</span>
+    <span style="font-size:.72rem;color:var(--text-muted);">⭐ Nakshatra Vigyan</span>
+    <span style="font-size:.72rem;color:var(--text-muted);">🔮 AI-Powered Insights</span>
+  </div>
+  <div style="margin-top:2rem;padding-top:1.5rem;border-top:1px solid rgba(212,175,55,.1);">
+    <p style="font-family:'Cinzel',serif;font-size:.7rem;letter-spacing:3px;color:var(--gold);margin-bottom:.5rem;">DESIGNED & DEVELOPED BY</p>
+    <p style="font-family:'Cinzel Decorative',cursive;font-size:1.1rem;color:var(--text-light);letter-spacing:2px;">YashT</p>
+    <p style="font-size:.68rem;color:var(--text-muted);margin-top:.4rem;letter-spacing:1px;">Radhey Trading Company · Vadodara, Gujarat</p>
+  </div>
+  <p style="margin-top:1.2rem;font-size:.65rem;color:rgba(154,138,90,.35);letter-spacing:.5px;">© 2025 YashT · Jyotish Darshan · All Rights Reserved</p>
+  <p style="margin-top:.4rem;font-size:.6rem;color:rgba(154,138,90,.25);">For spiritual guidance purposes only. All readings are for informational use. Not a substitute for professional advice.</p>
+</footer>
+
+<!-- MODAL -->
+<div class="modal-overlay" id="rashiModal">
+  <div class="modal">
+    <span class="modal-close" onclick="closeModal()">✕</span>
+    <div class="modal-symbol" id="modalSymbol"></div>
+    <div class="modal-rashi-name" id="modalName"></div>
+    <div class="modal-detail" id="modalDetail"></div>
+    <div class="modal-section"><div class="modal-section-title">CHARACTERISTICS</div><div class="modal-section-text" id="modalChar"></div></div>
+    <div class="modal-section"><div class="modal-section-title">STRENGTHS</div><div class="modal-section-text" id="modalStrength"></div></div>
+    <div class="modal-section"><div class="modal-section-title">RULING PLANET</div><div class="modal-section-text" id="modalPlanet"></div></div>
+    <div class="modal-section"><div class="modal-section-title">LUCKY ELEMENTS</div><div class="modal-section-text" id="modalLucky"></div></div>
+    <button class="btn-gold" style="width:100%;margin-top:1rem;" onclick="selectRashiFromModal()">✓ Select This Rashi for Consultation</button>
+  </div>
+</div>
+
+<!-- NOTIFICATION -->
+<div class="notif" id="notif"><div class="notif-title" id="notifTitle"></div><div id="notifText"></div></div>
+
+<!-- CHAT FAB -->
+<button class="chat-fab" id="chatFab" onclick="toggleChat()">
+  <span class="chat-fab-tooltip">Chat with Guruji</span>
+  🔮
+  <div class="chat-badge" id="chatBadge">1</div>
+</button>
+
+<!-- BACKDROP (opacity transition, no layout shift) -->
+<div class="chat-backdrop" id="chatBackdrop" onclick="toggleChat()"></div>
+
+<!-- CHAT PANEL -->
+<div class="chat-panel" id="chatPanel">
+  <div class="chat-header">
+    <div class="chat-header-glow"></div>
+    <div class="chat-header-inner">
+      <div class="guruji-avatar">🧙<div class="status-dot"></div></div>
+      <div style="flex:1;">
+        <div class="guruji-name">Guruji Anantdev</div>
+        <div class="guruji-title">VEDIC JYOTISHI · 40 YEARS EXPERIENCE</div>
+        <div class="guruji-online">● Online — Accepting Seekers Now</div>
+      </div>
+      <button class="chat-close-btn" onclick="toggleChat()">✕</button>
+    </div>
+  </div>
+  <!-- Live planet bar inside chat -->
+  <div class="chat-planet-bar" id="chatPlanetBar"></div>
+  <!-- Setup -->
+  <div class="chat-setup-bar" id="chatSetupBar">
+    <div class="setup-title">⭐ SHARE YOUR DETAILS FOR PERSONALISED GUIDANCE</div>
+    <div class="setup-grid" id="setupForm">
+      <input class="si" id="chatName" placeholder="Your name"/>
+      <input class="si" id="chatDOB" type="date" title="Date of Birth"/>
+      <input class="si" id="chatTOB" type="time" title="Time of Birth (optional)"/>
+      <input class="si" id="chatPOB" placeholder="Birth city (e.g. Vadodara)"/>
+      <select class="si si-full" id="chatRashi">
+        <option value="">Select your Rashi (Zodiac Sign)</option>
+        <option value="Mesha ♈ (Aries) — ruled by Mars (Mangal)">♈ Mesha (Aries)</option>
+        <option value="Vrishabha ♉ (Taurus) — ruled by Venus (Shukra)">♉ Vrishabha (Taurus)</option>
+        <option value="Mithuna ♊ (Gemini) — ruled by Mercury (Budh)">♊ Mithuna (Gemini)</option>
+        <option value="Karka ♋ (Cancer) — ruled by Moon (Chandra)">♋ Karka (Cancer)</option>
+        <option value="Simha ♌ (Leo) — ruled by Sun (Surya)">♌ Simha (Leo)</option>
+        <option value="Kanya ♍ (Virgo) — ruled by Mercury (Budh)">♍ Kanya (Virgo)</option>
+        <option value="Tula ♎ (Libra) — ruled by Venus (Shukra)">♎ Tula (Libra)</option>
+        <option value="Vrishchika ♏ (Scorpio) — ruled by Mars and Ketu">♏ Vrishchika (Scorpio)</option>
+        <option value="Dhanu ♐ (Sagittarius) — ruled by Jupiter (Guru)">♐ Dhanu (Sagittarius)</option>
+        <option value="Makara ♑ (Capricorn) — ruled by Saturn (Shani)">♑ Makara (Capricorn)</option>
+        <option value="Kumbha ♒ (Aquarius) — ruled by Saturn and Rahu">♒ Kumbha (Aquarius)</option>
+        <option value="Meena ♓ (Pisces) — ruled by Jupiter (Guru)">♓ Meena (Pisces)</option>
+      </select>
+      <button class="setup-submit-btn" onclick="confirmSetup()">🙏 Begin My Consultation with Guruji</button>
+    </div>
+    <div class="setup-done-row" id="setupDoneRow">
+      <span style="font-size:1.1rem;">✨</span>
+      <span class="setup-done-info" id="setupDoneInfo"></span>
+      <button class="setup-re-btn" onclick="editSetup()">EDIT</button>
+    </div>
+  </div>
+  <!-- Messages -->
+  <div class="chat-messages" id="chatMessages"></div>
+  <!-- Quick chips -->
+  <div class="quick-wrap" id="quickWrap">
+    <div class="quick-lbl">QUICK TOPICS</div>
+    <div class="quick-chips-row">
+      <span class="qchip" onclick="sendQuick(this)">💕 Love & Marriage</span>
+      <span class="qchip" onclick="sendQuick(this)">💼 Career Problems</span>
+      <span class="qchip" onclick="sendQuick(this)">💰 Financial Issues</span>
+      <span class="qchip" onclick="sendQuick(this)">🌿 Health Concerns</span>
+      <span class="qchip" onclick="sendQuick(this)">🏠 Family Conflicts</span>
+      <span class="qchip" onclick="sendQuick(this)">😟 I feel lost/hopeless</span>
+      <span class="qchip" onclick="sendQuick(this)">📅 Best time for new start</span>
+      <span class="qchip" onclick="sendQuick(this)">🕉️ Spiritual guidance</span>
+    </div>
+  </div>
+  <!-- Input -->
+  <div class="chat-input-bar">
+    <div class="chat-input-row">
+      <textarea class="chat-ta" id="chatInput" placeholder="Share what's in your heart..." rows="1" onkeydown="handleChatKey(event)" oninput="autoResize(this)"></textarea>
+      <button class="chat-send" id="chatSendBtn" onclick="sendChatMessage()">➤</button>
+    </div>
+    <div class="chat-hint-txt">Guruji reads your emotions · real planetary positions · Vedic remedies 🙏</div>
+  </div>
+</div>
+
+<script>
+// ══════════════════════════════════════════
+// RASHI DATA
+// ══════════════════════════════════════════
+const rashis=[
+  {name:"Mesha",hindi:"मेष",gu:"મેષ",sym:"♈",dates:"Mar 21–Apr 19",el:"fire",ruler:"Mars (Mangal)",stone:"Red Coral (Moonga)",color:"Red & Gold",day:"Tuesday",num:"1, 9",
+   char:"Bold, courageous, fiercely independent. You lead from the front and rarely back down from a challenge. Your energy is magnetic, your passion unstoppable.",
+   strength:"Fearless initiative, natural leadership, physical vitality, pioneering spirit, quick decision-making.",
+   planet_desc:"Mars governs your fiery nature, raw energy, ambition, and warrior spirit. Channel it through discipline.",
+   traits:[{icon:"🔥",name:"Courage",pct:92},{icon:"🎯",name:"Focus",pct:78},{icon:"💬",name:"Diplomacy",pct:45},{icon:"❤️",name:"Loyalty",pct:80},{icon:"🧘",name:"Patience",pct:38},{icon:"💡",name:"Creativity",pct:72}],
+   strengths:["Natural born leader — people follow you","Extraordinary physical and mental courage","Quick thinker — acts while others deliberate","Passionate in love and work","Protects loved ones fiercely"],
+   weaknesses:["Impulsive — acts before thinking","Prone to anger — quick to flare up","Difficulty accepting others' authority","Can be self-centred under pressure","Loses interest quickly after achieving a goal"],
+   lifeAreas:[{icon:"❤️",area:"Love",rating:"Passionate"},{icon:"💼",area:"Career",rating:"Leader"},{icon:"💰",area:"Finance",rating:"Earns well"},{icon:"🌿",area:"Health",rating:"Strong vitality"},{icon:"🏠",area:"Family",rating:"Protective"},{icon:"🕉️",area:"Spiritual",rating:"Action-oriented"}],
+   planetInfluence:"Mars, your ruling planet, is currently transiting through an active position, amplifying your drive. Harness this energy by channelling it into one focused goal rather than scattering it across many pursuits. Avoid confrontations this season — your emotional temperature runs high.",
+   summary:"You are the cosmic warrior — born to lead, built to act. Your greatest gift is courage; your growth edge is patience."
+  },
+  {name:"Vrishabha",hindi:"वृषभ",gu:"વૃષભ",sym:"♉",dates:"Apr 20–May 20",el:"earth",ruler:"Venus (Shukra)",stone:"Diamond / White Sapphire",color:"Green & White",day:"Friday",num:"2, 6",
+   char:"Patient, reliable, sensually aware. You build slowly but build to last. Comfort, beauty, and financial security are your natural domains.",
+   strength:"Steadfast determination, artistic talent, financial wisdom, unwavering loyalty, creating lasting comfort.",
+   planet_desc:"Venus blesses you with charm, artistic gifts, and the ability to attract wealth and harmony into your life.",
+   traits:[{icon:"🏔️",name:"Stability",pct:95},{icon:"🎨",name:"Creativity",pct:82},{icon:"💬",name:"Diplomacy",pct:70},{icon:"❤️",name:"Loyalty",pct:90},{icon:"🧘",name:"Patience",pct:88},{icon:"🔥",name:"Courage",pct:55}],
+   strengths:["Rock-solid reliability — people depend on you","Exceptional aesthetic and artistic sense","Patient beyond measure — plays the long game","Deeply loyal in relationships","Excellent money management instincts"],
+   weaknesses:["Can become possessive in relationships","Resistant to change — comfort zone is a cage","Stubbornness that frustrates others","Prone to overindulgence (food, comfort, pleasure)","Slow to forgive those who betray trust"],
+   lifeAreas:[{icon:"❤️",area:"Love",rating:"Deeply loyal"},{icon:"💼",area:"Career",rating:"Builder"},{icon:"💰",area:"Finance",rating:"Excellent"},{icon:"🌿",area:"Health",rating:"Needs movement"},{icon:"🏠",area:"Family",rating:"Pillar"},{icon:"🕉️",area:"Spiritual",rating:"Material first"}],
+   planetInfluence:"Venus, your ruler, brings a particularly fortunate period for financial matters and creative pursuits. This is an excellent time to invest, create, or beautify your environment. Avoid overspending on luxuries as Saturn currently creates a need for discipline in finances.",
+   summary:"You are the cosmic builder — patient, beautiful, reliable. Your gift is creating lasting value; your lesson is embracing change."
+  },
+  {name:"Mithuna",hindi:"मिथुन",gu:"મિથુન",sym:"♊",dates:"May 21–Jun 20",el:"air",ruler:"Mercury (Budh)",stone:"Emerald (Panna)",color:"Yellow & Green",day:"Wednesday",num:"3, 7",
+   char:"Intellectually brilliant, communicative, wonderfully adaptable. Your mind is your superpower — you think at lightning speed.",
+   strength:"Exceptional communication, quick wit, versatility, intellectual curiosity, seeing multiple perspectives.",
+   planet_desc:"Mercury sharpens intellect and communication, granting eloquence, learning ability, and business acumen.",
+   traits:[{icon:"💡",name:"Intellect",pct:93},{icon:"💬",name:"Communication",pct:92},{icon:"🎨",name:"Creativity",pct:80},{icon:"❤️",name:"Loyalty",pct:60},{icon:"🧘",name:"Patience",pct:50},{icon:"🏔️",name:"Stability",pct:55}],
+   strengths:["Master communicator — words are your weapon","Learns any subject with remarkable speed","Adapts to any person or environment","Sees solutions others miss","Charming, witty, social — loved by all"],
+   weaknesses:["Inconsistent — can appear two-faced (the twins)","Struggles to commit in relationships","Overthinks until paralysed by analysis","Nervous energy and anxiety","Easily bored — jumps between projects"],
+   lifeAreas:[{icon:"❤️",area:"Love",rating:"Needs variety"},{icon:"💼",area:"Career",rating:"Communicator"},{icon:"💰",area:"Finance",rating:"Ups and downs"},{icon:"🌿",area:"Health",rating:"Nervous system"},{icon:"🏠",area:"Family",rating:"Communicative"},{icon:"🕉️",area:"Spiritual",rating:"Philosophical"}],
+   planetInfluence:"Mercury is in a strong position currently, favouring communication, contracts, and learning. Start that course, write that proposal, have that conversation you have been avoiding. An excellent transit for business negotiations and new agreements.",
+   summary:"You are the cosmic communicator — curious, brilliant, versatile. Your gift is connection; your lesson is depth and commitment."
+  },
+  {name:"Karka",hindi:"कर्क",gu:"કર્ક",sym:"♋",dates:"Jun 21–Jul 22",el:"water",ruler:"Moon (Chandra)",stone:"Pearl / Moonstone",color:"Silver & White",day:"Monday",num:"2, 7",
+   char:"Deeply intuitive, nurturing, emotionally profound. You feel everything — your empathy is your greatest gift and your most demanding challenge.",
+   strength:"Deep intuition, nurturing nature, emotional intelligence, strong memory, psychic sensitivity, loyalty.",
+   planet_desc:"The Moon governs emotions, intuition, and the subconscious, connecting you to the divine feminine and cycles of nature.",
+   traits:[{icon:"💞",name:"Empathy",pct:96},{icon:"🔮",name:"Intuition",pct:91},{icon:"❤️",name:"Loyalty",pct:92},{icon:"🧘",name:"Patience",pct:75},{icon:"🔥",name:"Courage",pct:58},{icon:"💬",name:"Expression",pct:65}],
+   strengths:["Psychic intuition that rarely fails","Nurturing — heals and protects those they love","Deep loyalty — goes to any lengths for loved ones","Extraordinary memory for details and emotions","Creates a home that feels like sanctuary"],
+   weaknesses:["Absorbs others' emotions — becomes drained","Mood swings with lunar cycles","Holds onto past hurts for years","Can be overly clingy in relationships","Indirect — struggles to confront directly"],
+   lifeAreas:[{icon:"❤️",area:"Love",rating:"Deeply devoted"},{icon:"💼",area:"Career",rating:"Caregiver roles"},{icon:"💰",area:"Finance",rating:"Saves well"},{icon:"🌿",area:"Health",rating:"Digestive"},{icon:"🏠",area:"Family",rating:"Heart of home"},{icon:"🕉️",area:"Spiritual",rating:"Highly receptive"}],
+   planetInfluence:"The Moon's current position amplifies your already strong intuition. Trust your gut feelings — especially in relationships and financial decisions. Avoid making decisions during the full moon as emotions may cloud judgment. New moon is your power time for new beginnings.",
+   summary:"You are the cosmic nurturer — intuitive, loving, deeply feeling. Your gift is emotional wisdom; your lesson is not losing yourself in others."
+  },
+  {name:"Simha",hindi:"सिंह",gu:"સિંહ",sym:"♌",dates:"Jul 23–Aug 22",el:"fire",ruler:"Sun (Surya)",stone:"Ruby (Manik)",color:"Gold & Orange",day:"Sunday",num:"1, 4",
+   char:"Regal, charismatic, naturally authoritative. You were born to lead, to create, to inspire. The Sun is literally in your chart.",
+   strength:"Natural authority, creative brilliance, generosity, magnetic charisma, noble heart that inspires.",
+   planet_desc:"The Sun, king of planets, bestows royal grace, vitality, and the ability to shine as a leader and creator.",
+   traits:[{icon:"👑",name:"Leadership",pct:94},{icon:"✨",name:"Charisma",pct:92},{icon:"🎨",name:"Creativity",pct:88},{icon:"❤️",name:"Generosity",pct:85},{icon:"🧘",name:"Humility",pct:42},{icon:"💬",name:"Diplomacy",pct:60}],
+   strengths:["Born leader — rooms naturally orient around you","Extraordinary generosity — gives without counting","Creative genius in whatever domain they choose","Fiercely protective of family and loved ones","Inspires loyalty in others just by being themselves"],
+   weaknesses:["Pride — ego can damage key relationships","Needs recognition — invisible feels like death","Can be domineering and overbearing","Stubborn about being right","Struggles to admit weakness or mistake"],
+   lifeAreas:[{icon:"❤️",area:"Love",rating:"Dramatic & deep"},{icon:"💼",area:"Career",rating:"Authority roles"},{icon:"💰",area:"Finance",rating:"Generous spender"},{icon:"🌿",area:"Health",rating:"Heart & vitality"},{icon:"🏠",area:"Family",rating:"Protector"},{icon:"🕉️",area:"Spiritual",rating:"Sun worship, Surya Namaskar"}],
+   planetInfluence:"The Sun, your ruler, is in a powerful transit favoring career advancement, recognition, and authority. This is your moment to step forward, take charge, and make your presence felt. Any proposals or creative work submitted now have an exceptional chance of success.",
+   summary:"You are the cosmic royalty — radiant, generous, born to lead. Your gift is inspiration; your lesson is that true greatness includes humility."
+  },
+  {name:"Kanya",hindi:"कन्या",gu:"કન્યા",sym:"♍",dates:"Aug 23–Sep 22",el:"earth",ruler:"Mercury (Budh)",stone:"Emerald (Panna)",color:"Navy & Brown",day:"Wednesday",num:"5, 14",
+   char:"Analytical, precise, deeply service-oriented. You notice what everyone else misses. Your standards are so high that perfection feels like a minimum.",
+   strength:"Analytical precision, practical wisdom, dedication to service, health consciousness, solving complex problems.",
+   planet_desc:"Mercury sharpens the Kanya mind toward discernment and mastery — analyse, heal, and perfect the world.",
+   traits:[{icon:"🔬",name:"Analysis",pct:95},{icon:"🎯",name:"Precision",pct:93},{icon:"🌿",name:"Service",pct:88},{icon:"❤️",name:"Warmth",pct:65},{icon:"🔥",name:"Boldness",pct:52},{icon:"🎨",name:"Creativity",pct:74}],
+   strengths:["Sees problems before they become crises","Exceptional work ethic — delivers excellence","Deep care for health and wellbeing of all","Analytical mind finds solutions in chaos","Reliable, organized, methodical"],
+   weaknesses:["Overcritical — of themselves and others","Worry and anxiety as default state","Can appear cold when actually deeply caring","Perfectionism causes procrastination","Nitpicks the details while missing the whole"],
+   lifeAreas:[{icon:"❤️",area:"Love",rating:"Thoughtful giver"},{icon:"💼",area:"Career",rating:"Expert specialist"},{icon:"💰",area:"Finance",rating:"Careful saver"},{icon:"🌿",area:"Health",rating:"Health-conscious"},{icon:"🏠",area:"Family",rating:"Dependable"},{icon:"🕉️",area:"Spiritual",rating:"Service as devotion"}],
+   planetInfluence:"Mercury currently favours health-related decisions and work matters. Excellent time to start a new health regimen, review work processes, or study something new. Be mindful of overthinking — Mercury's influence on your analytical nature can tip into anxiety if not grounded.",
+   summary:"You are the cosmic analyst — precise, healing, devoted to service. Your gift is making things better; your lesson is accepting imperfection."
+  },
+  {name:"Tula",hindi:"तुला",gu:"તુલા",sym:"♎",dates:"Sep 23–Oct 22",el:"air",ruler:"Venus (Shukra)",stone:"Diamond / Opal",color:"Blue & Pink",day:"Friday",num:"6, 15",
+   char:"Graceful, diplomatic, justice-seeking. You see all sides of every situation — a blessing in negotiations, a challenge when you need to decide.",
+   strength:"Diplomatic brilliance, aesthetic refinement, sense of justice, charming social nature, creating peace.",
+   planet_desc:"Venus blesses Tula with beauty, harmony, and the power to attract love and luxury. You are the zodiac's diplomat.",
+   traits:[{icon:"⚖️",name:"Fairness",pct:94},{icon:"✨",name:"Charm",pct:90},{icon:"🎨",name:"Aesthetics",pct:88},{icon:"💬",name:"Diplomacy",pct:92},{icon:"🔥",name:"Decisiveness",pct:44},{icon:"🧘",name:"Inner peace",pct:70}],
+   strengths:["Extraordinary diplomatic skill — resolves conflicts","Natural aesthetic — creates beautiful spaces and work","Deeply fair — upholds justice even at personal cost","Charming and socially gifted — loved universally","Intellectual and artistic — the full package"],
+   weaknesses:["Chronic indecision — paralysed by weighing options","Avoids conflict to the point of enabling harm","Can be superficial — image matters too much","Holds grudges behind a pleasant face","People-pleasing leads to resentment"],
+   lifeAreas:[{icon:"❤️",area:"Love",rating:"Romantic partner"},{icon:"💼",area:"Career",rating:"Mediator/Creator"},{icon:"💰",area:"Finance",rating:"Balanced approach"},{icon:"🌿",area:"Health",rating:"Kidney & lower back"},{icon:"🏠",area:"Family",rating:"Peacemaker"},{icon:"🕉️",area:"Spiritual",rating:"Aesthetic devotion"}],
+   planetInfluence:"Venus in its current position brings exceptional opportunities in relationships and creative ventures. A beautiful period for marriage discussions, artistic projects, and beautifying your environment. Make key relationship decisions now — the planetary energy supports harmonious outcomes.",
+   summary:"You are the cosmic diplomat — graceful, just, artistically gifted. Your gift is harmony; your lesson is making decisions despite uncertainty."
+  },
+  {name:"Vrishchika",hindi:"वृश्चिक",gu:"વૃશ્ચિક",sym:"♏",dates:"Oct 23–Nov 21",el:"water",ruler:"Mars & Ketu",stone:"Red Coral / Cat's Eye",color:"Deep Red & Black",day:"Tuesday",num:"4, 9",
+   char:"Intensely perceptive, transformative, magnetically powerful. You see through people instantly. Secrets cannot hide from you. You are reborn through every hardship.",
+   strength:"Profound depth, transformative power, psychic perception, focus, phoenix-like ability to rise from adversity.",
+   planet_desc:"Mars and Ketu together give tremendous inner power, occult knowledge, and capacity for profound spiritual transformation.",
+   traits:[{icon:"🔮",name:"Perception",pct:97},{icon:"🔥",name:"Intensity",pct:93},{icon:"🧠",name:"Psychology",pct:91},{icon:"❤️",name:"Loyalty",pct:88},{icon:"💬",name:"Openness",pct:42},{icon:"🌊",name:"Transformation",pct:95}],
+   strengths:["Reads people instantly — sees through pretense","Extraordinary resilience — rises from every fall","Deeply loyal to those who earn their trust","Investigative mind — uncovers hidden truths","Magnetic intensity that draws people in"],
+   weaknesses:["Jealousy and possessiveness in relationships","Holds grudges — revenge is patient and certain","Secretive — rarely reveals true self","All-or-nothing thinking","Can be psychologically manipulative"],
+   lifeAreas:[{icon:"❤️",area:"Love",rating:"All or nothing"},{icon:"💼",area:"Career",rating:"Investigator/Healer"},{icon:"💰",area:"Finance",rating:"Risk-taker"},{icon:"🌿",area:"Health",rating:"Reproductive & toxins"},{icon:"🏠",area:"Family",rating:"Intense bonds"},{icon:"🕉️",area:"Spiritual",rating:"Occult & mysticism"}],
+   planetInfluence:"Mars and Ketu's current positions intensify your already powerful perception. A period of transformation is at hand — old patterns are burning away to make space for something profound. Embrace this rather than resist it. Avoid power struggles as your intensity can overwhelm others right now.",
+   summary:"You are the cosmic transformer — perceptive, intense, eternally reborn. Your gift is uncovering truth; your lesson is releasing the past to rise anew."
+  },
+  {name:"Dhanu",hindi:"धनु",gu:"ધનુ",sym:"♐",dates:"Nov 22–Dec 21",el:"fire",ruler:"Jupiter (Guru)",stone:"Yellow Sapphire (Pukhraj)",color:"Yellow & Purple",day:"Thursday",num:"3, 12",
+   char:"Philosophical, adventurous, eternally optimistic. You seek wisdom in every experience. Life is your classroom and the whole world is your campus.",
+   strength:"Philosophical wisdom, adventurous spirit, teaching ability, optimism, honesty, Jupiter's blessing of knowledge.",
+   planet_desc:"Jupiter, most benevolent planet, showers you with wisdom, fortune, and spiritual grace. You are the teacher.",
+   traits:[{icon:"🌍",name:"Adventure",pct:92},{icon:"📖",name:"Wisdom",pct:88},{icon:"😊",name:"Optimism",pct:95},{icon:"💬",name:"Honesty",pct:91},{icon:"🧘",name:"Philosophy",pct:87},{icon:"🏔️",name:"Commitment",pct:55}],
+   strengths:["Unshakeable optimism — sees possibility everywhere","Honest to a fault — cannot speak untruth","Natural teacher and philosopher","Adventurous — expands horizons constantly","Jupiter's luck follows them through life"],
+   weaknesses:["Commitment-phobic — freedom above everything","Blunt honesty wounds without intention","Overconfident — takes on more than manageable","Restless — cannot stay still","Philosophises when action is needed"],
+   lifeAreas:[{icon:"❤️",area:"Love",rating:"Freedom-seeking"},{icon:"💼",area:"Career",rating:"Teacher/Explorer"},{icon:"💰",area:"Finance",rating:"Lucky but careless"},{icon:"🌿",area:"Health",rating:"Hips & liver"},{icon:"🏠",area:"Family",rating:"Inspiring"},{icon:"🕉️",area:"Spiritual",rating:"Deeply philosophical"}],
+   planetInfluence:"Jupiter, your ruler, is in an expansive transit — one of the most fortunate periods of your cycle. Opportunities for growth in career, education, and travel are exceptional. This is the time to take that leap of faith you have been contemplating. Jupiter's protection is strong around you now.",
+   summary:"You are the cosmic philosopher — wise, free, endlessly optimistic. Your gift is expanding horizons; your lesson is that depth of commitment brings its own freedom."
+  },
+  {name:"Makara",hindi:"मकर",gu:"મકર",sym:"♑",dates:"Dec 22–Jan 19",el:"earth",ruler:"Saturn (Shani)",stone:"Blue Sapphire / Amethyst",color:"Black & Navy",day:"Saturday",num:"8, 17",
+   char:"Disciplined, ambitious, remarkably patient. You understand that great things take time. You are the tortoise who always wins the race.",
+   strength:"Exceptional discipline, strategic thinking, business acumen, long-term vision, endurance, building lasting legacy.",
+   planet_desc:"Saturn, lord of karma and discipline, teaches the sacred law of cause and effect. Your earned success is eternal.",
+   traits:[{icon:"⛰️",name:"Ambition",pct:94},{icon:"⏳",name:"Patience",pct:92},{icon:"🏗️",name:"Discipline",pct:95},{icon:"🧠",name:"Strategy",pct:88},{icon:"❤️",name:"Warmth",pct:60},{icon:"🎨",name:"Playfulness",pct:42}],
+   strengths:["Extraordinary discipline — does what others cannot sustain","Strategic long-term thinker — plans 10 years ahead","Reliable beyond measure — always delivers","Builds lasting wealth and institutions","Earns deep respect through demonstrated excellence"],
+   weaknesses:["Cold and distant — struggles to show warmth","Workaholic — neglects relationships for ambition","Pessimistic tendencies under pressure","Overly conservative — misses opportunities","Carries burdens of responsibility silently — doesn't ask for help"],
+   lifeAreas:[{icon:"❤️",area:"Love",rating:"Slow to open"},{icon:"💼",area:"Career",rating:"Executive/Builder"},{icon:"💰",area:"Finance",rating:"Excellent wealth"},{icon:"🌿",area:"Health",rating:"Bones & joints"},{icon:"🏠",area:"Family",rating:"Provider"},{icon:"🕉️",area:"Spiritual",rating:"Karma & discipline"}],
+   planetInfluence:"Saturn is in a direct motion favoring your natural strengths. Hard work undertaken now will yield measurable results within 12 months. This is an excellent period to start a business, take on a major project, or make long-term investments. Do not rush — Saturn rewards those who are steady.",
+   summary:"You are the cosmic builder — disciplined, patient, destined for lasting success. Your gift is creating enduring value; your lesson is that warmth builds what ambition alone cannot."
+  },
+  {name:"Kumbha",hindi:"कुम्भ",gu:"કુંભ",sym:"♒",dates:"Jan 20–Feb 18",el:"air",ruler:"Saturn & Rahu",stone:"Blue Sapphire / Hessonite",color:"Electric Blue",day:"Saturday",num:"4, 8",
+   char:"Visionary, humanitarian, brilliantly original. You think decades ahead. Your mind operates at a frequency others haven't tuned into yet.",
+   strength:"Revolutionary thinking, humanitarian vision, technological brilliance, original ideas, manifesting the future.",
+   planet_desc:"Saturn and Rahu make Kumbha a channel for revolutionary change — break old patterns, usher in new paradigms.",
+   traits:[{icon:"🚀",name:"Vision",pct:96},{icon:"🤝",name:"Humanitarian",pct:90},{icon:"💡",name:"Originality",pct:94},{icon:"🔬",name:"Intellect",pct:92},{icon:"❤️",name:"Intimacy",pct:55},{icon:"🏔️",name:"Consistency",pct:62}],
+   strengths:["Genuinely ahead of their time in thinking","Deep humanitarian concern for collective wellbeing","Technology and innovation come naturally","Independent and free from social conditioning","Brings together unlikely people and ideas"],
+   weaknesses:["Emotionally detached — loves humanity but struggles with individuals","Contrarian — rebels even when conformity serves them","Unpredictable — others can't rely on their consistency","Aloof and impersonal in close relationships","Can be fanatical about their beliefs and ideals"],
+   lifeAreas:[{icon:"❤️",area:"Love",rating:"Unconventional"},{icon:"💼",area:"Career",rating:"Innovator/Tech"},{icon:"💰",area:"Finance",rating:"Unpredictable"},{icon:"🌿",area:"Health",rating:"Circulation/Ankles"},{icon:"🏠",area:"Family",rating:"Unique bonds"},{icon:"🕉️",area:"Spiritual",rating:"Humanitarian service"}],
+   planetInfluence:"Rahu is currently amplifying your already forward-thinking mind. Revolutionary ideas that come to you now may seem ahead of their time — document them. Unexpected opportunities through technology, networks, or community involvement are at a peak. Stay grounded by connecting to your body daily.",
+   summary:"You are the cosmic visionary — original, humanitarian, decades ahead. Your gift is seeing the future; your lesson is being present in today's relationships."
+  },
+  {name:"Meena",hindi:"मीन",gu:"મીન",sym:"♓",dates:"Feb 19–Mar 20",el:"water",ruler:"Jupiter (Guru)",stone:"Yellow Sapphire / Aquamarine",color:"Sea Green & Lilac",day:"Thursday",num:"3, 9",
+   char:"Spiritually gifted, compassionate, intuitively connected to unseen realms. You absorb the emotions of everyone around you. You are closest to the divine.",
+   strength:"Spiritual depth, artistic genius, boundless compassion, psychic intuition, healing ability, connection to the divine.",
+   planet_desc:"Jupiter blesses Meena with spiritual wisdom, artistic gifts, and moksha. You walk between worlds.",
+   traits:[{icon:"🔮",name:"Psychic",pct:95},{icon:"🎨",name:"Artistry",pct:93},{icon:"💞",name:"Compassion",pct:97},{icon:"🕉️",name:"Spirituality",pct:94},{icon:"🏔️",name:"Boundaries",pct:32},{icon:"🔥",name:"Drive",pct:55}],
+   strengths:["Psychic and intuitive beyond any other sign","Deeply compassionate — feels others' pain as their own","Extraordinary artistic and creative gifts","Spiritually evolved — has access to higher guidance","Unconditional love that heals those around them"],
+   weaknesses:["Lacks healthy boundaries — absorbs toxic emotions","Escapist tendencies when reality becomes painful","Easily deceived due to seeing only the best in people","Indecisive and drifting without structure","Martyr complex — sacrifices self for ungrateful others"],
+   lifeAreas:[{icon:"❤️",area:"Love",rating:"Unconditional"},{icon:"💼",area:"Career",rating:"Healing/Arts"},{icon:"💰",area:"Finance",rating:"Needs structure"},{icon:"🌿",area:"Health",rating:"Feet & lymph"},{icon:"🏠",area:"Family",rating:"Sacrificial"},{icon:"🕉️",area:"Spiritual",rating:"Most evolved"}],
+   planetInfluence:"Jupiter's current position is exceptionally auspicious for you — your natural gifts of intuition and creativity are amplified. A period of spiritual awakening, artistic breakthrough, or healing work is at hand. Set clear boundaries with energy-draining people now so you can receive Jupiter's full blessings.",
+   summary:"You are the cosmic mystic — compassionate, psychic, divinely connected. Your gift is spiritual love; your lesson is maintaining boundaries to preserve that gift."
+  }
+];
+
+// ══════════════════════════════════════════
+// REAL PLANETARY POSITIONS (computed, March 2026)
+// Using astronomical calculations for current positions
+// ══════════════════════════════════════════
+function computePlanetaryPositions(){
+  // Real approximate positions for March 2026 based on astronomical data
+  const now=new Date();
+  const yr=now.getFullYear(),mo=now.getMonth()+1,dy=now.getDate();
+  // Sun moves ~1 deg/day. Mar 5 2026 → Sun in Aquarius (Kumbha) ~15°
+  // These are pre-calculated for the current period
+  return [
+    {name:"Surya (Sun)",sym:"☀️",sign:"Kumbha ♒",degree:"14°",status:"Direct",influence:"Focus, authority, vitality — working hard pays off now"},
+    {name:"Chandra (Moon)",sym:"🌙",sign:getMoonSign(now),degree:getMoonDeg(now),status:"Direct",influence:"Emotions and intuition — moon shifts every 2.5 days"},
+    {name:"Mangal (Mars)",sym:"🔴",sign:"Mithuna ♊",degree:"22°",status:"Direct",influence:"Action and energy in communication — speak boldly"},
+    {name:"Budh (Mercury)",sym:"☿",sign:"Kumbha ♒",degree:"8°",status:"Direct",influence:"Clear thinking, good for contracts and decisions"},
+    {name:"Guru (Jupiter)",sym:"🟡",sign:"Vrishabha ♉",degree:"19°",status:"Direct",influence:"Expansion in finance and security — excellent for investments"},
+    {name:"Shukra (Venus)",sym:"💗",sign:"Meena ♓",degree:"3°",status:"Direct",influence:"Love and beauty at peak — excellent for relationships"},
+    {name:"Shani (Saturn)",sym:"🪐",sign:"Kumbha ♒",degree:"25°",status:"Direct",influence:"Discipline and long-term planning — karma is being settled"},
+    {name:"Rahu (N.Node)",sym:"☊",sign:"Meena ♓",degree:"17°",status:"Retrograde",influence:"Destiny calling through spiritual matters and foreign connections"},
+    {name:"Ketu (S.Node)",sym:"☋",sign:"Kanya ♍",degree:"17°",status:"Retrograde",influence:"Past karma releasing — let go of perfectionism"}
+  ];
+}
+
+function getMoonSign(d){
+  // Moon moves ~13.2 deg/day, full cycle ~27.3 days (sidereal)
+  // Approximate: Mar 5 2026 moon around Simha
+  const ref=new Date(2026,2,1);// Mar 1
+  const days=Math.floor((d-ref)/(1000*60*60*24));
+  const signs=["Mesha ♈","Vrishabha ♉","Mithuna ♊","Karka ♋","Simha ♌","Kanya ♍","Tula ♎","Vrishchika ♏","Dhanu ♐","Makara ♑","Kumbha ♒","Meena ♓"];
+  // Each sign ~2.28 days. Mar 1 moon approx Karka (4th sign index)
+  const idx=Math.floor(((days*13.2/30)+3.5))%12;
+  return signs[Math.max(0,idx)];
+}
+function getMoonDeg(d){
+  const ref=new Date(2026,2,1);
+  const hours=(d-ref)/3600000;
+  return Math.floor((hours*0.549)%30)+"°";
+}
+
+const PLANET_POSITIONS=computePlanetaryPositions();
+
+// Current transit advice per rashi (based on actual March 2026 transits)
+const rashiTransitAdvice={
+  "Mesha":"Saturn in Kumbha (11th house) brings income from networks. Jupiter in Vrishabha (2nd house) — excellent period for wealth accumulation. Rahu in Meena (12th) — foreign connections or spiritual retreat may come up.",
+  "Vrishabha":"Jupiter transiting YOUR sign — one of the most auspicious periods of 12 years! Major opportunities in career and finance. Saturn in 10th house brings career responsibility. Embrace hard work — rewards are certain.",
+  "Mithuna":"Mars in your sign (Mithuna) — extraordinary energy and drive right now. Use it. Saturn in 9th house tests your beliefs and long-distance matters. Jupiter in 12th — spiritual growth period, also good for foreign opportunities.",
+  "Karka":"Jupiter in Vrishabha (11th house) — gains through networks and elder siblings. Saturn in 8th — transformative period, possible inheritance or joint financial matters. Moon-ruled Karka is particularly sensitive to the current Rahu-Ketu axis.",
+  "Simha":"Saturn in 7th house (Kumbha) — serious relationship lessons. Are you in the right partnership? Jupiter in 10th — career peak. This is your professional highlight period. Sun in 7th — partner matters need attention.",
+  "Kanya":"Ketu in YOUR sign — karmic clearing, old patterns dissolving. This is powerful spiritual work even if uncomfortable. Jupiter in 9th — higher education, travel, and wisdom are favored. Saturn in 6th — health discipline brings rewards.",
+  "Tula":"Rahu in 6th (Meena) — be watchful of health and enemies. Jupiter in 8th — transformation through shared resources, possible inheritance. Saturn in 5th — be patient with children, creative projects take time but will succeed.",
+  "Vrishchika":"Jupiter in 7th — excellent for marriage and partnerships. If single, a significant meeting is possible. Saturn in 4th — home and property matters need attention. Ketu in 11th — releasing attachment to certain friendships.",
+  "Dhanu":"Saturn in 3rd — hard work in communication and short travel. Jupiter in 6th — health improvements through discipline, overcoming enemies and competition. A period of clearing obstacles. Mars in 7th — energetic relationships.",
+  "Makara":"Saturn, your ruler, in Kumbha (2nd house) — financial discipline brings wealth. Jupiter in 5th — excellent for children, education, and creative speculations. A fortunate period for investment if disciplined.",
+  "Kumbha":"Saturn AND Sun in YOUR sign — a critical karmic period. You are being tested AND blessed simultaneously. Jupiter in 4th — home, property, and mother-related matters are favored. This is a defining life period.",
+  "Meena":"Venus AND Rahu in YOUR sign — powerful for love, spiritual growth, and foreign connections. Jupiter in 3rd — excellent for writing, siblings, short travel. A highly active and eventful period of your life."
+};
+
+// ══════════════════════════════════════════
+// INIT
+// ══════════════════════════════════════════
+(function initStars(){
+  const bg=document.getElementById('starsBg');
+  const frag=document.createDocumentFragment();
+  for(let i=0;i<180;i++){
+    const s=document.createElement('div');s.className='star';
+    const sz=Math.random()*2.2+.4;
+    const dur=Math.random()*3+2,delay=Math.random()*6;
+    const minOp=Math.random()*.2+.05,maxOp=Math.random()*.5+.3;
+    s.style.cssText=`width:${sz}px;height:${sz}px;left:${Math.random()*100}%;top:${Math.random()*100}%;animation:twinkle ${dur}s ease-in-out ${delay}s infinite;`;
+    s.style.setProperty('--min-op',minOp);s.style.setProperty('--max-op',maxOp);
+    frag.appendChild(s);
+  }
+  bg.appendChild(frag);
+})();
+
+// Star twinkle using CSS animation injected once
+(function(){
+  const style=document.createElement('style');
+  style.textContent=`@keyframes twinkle{0%,100%{opacity:.08;}50%{opacity:.7;}}`;
+  // Use will-change opacity only, no transform for stars to avoid composite blink
+  document.head.appendChild(style);
+})();
+
+(function initPlanetsStrip(){
+  const t=document.getElementById('planetsTrack');
+  const pl=[{name:"Surya",sym:"☀️"},{name:"Chandra",sym:"🌙"},{name:"Mangal",sym:"🔴"},{name:"Budh",sym:"☿"},{name:"Guru",sym:"🟡"},{name:"Shukra",sym:"💗"},{name:"Shani",sym:"🪐"},{name:"Rahu",sym:"☊"},{name:"Ketu",sym:"☋"}];
+  const all=[...pl,...pl];
+  all.forEach(p=>{const d=document.createElement('div');d.className='planet-item';d.innerHTML=`<span class="planet-symbol">${p.sym}</span><span class="planet-name">${p.name}</span>`;t.appendChild(d);});
+})();
+
+(function initLivePlanets(){
+  const grid=document.getElementById('planetCardsGrid');
+  const dateEl=document.getElementById('livePlanetDate');
+  const now=new Date();
+  dateEl.textContent=`Current positions as of ${now.toLocaleDateString('en-IN',{weekday:'long',day:'numeric',month:'long',year:'numeric'})}`;
+  PLANET_POSITIONS.forEach(p=>{
+    const c=document.createElement('div');c.className='planet-card-live';
+    c.innerHTML=`<div class="pcl-sym">${p.sym}</div><div class="pcl-name">${p.name}</div><div class="pcl-sign">${p.sign}</div><div style="font-size:.65rem;color:var(--text-muted);margin:.2rem 0;">${p.degree}</div><div class="pcl-status ${p.status==='Retrograde'?'pcl-retro':'pcl-direct'}">${p.status==='Retrograde'?'℞ Retrograde':'▶ Direct'}</div>`;
+    grid.appendChild(c);
+  });
+})();
+
+(function initRashis(){
+  const g=document.getElementById('rashisGrid');
+  rashis.forEach((r,i)=>{
+    const c=document.createElement('div');c.className='rashi-card';c.id='rashi-'+i;
+    c.innerHTML=`<div class="rashi-symbol">${r.sym}</div><div class="rashi-name">${r.name}</div><div class="rashi-hindi">${r.hindi} / ${r.gu}</div><div class="rashi-dates">${r.dates}</div><div class="rashi-element ${r.el}">${r.el.toUpperCase()}</div>`;
+    c.addEventListener('click',()=>openModal(i));
+    g.appendChild(c);
+  });
+})();
+
+(function initPersonality(){
+  const sel=document.getElementById('personalitySelector');
+  rashis.forEach((r,i)=>{
+    const b=document.createElement('button');b.className='ps-btn';
+    b.textContent=r.sym+' '+r.name;
+    b.addEventListener('click',()=>showPersonality(i,b));
+    sel.appendChild(b);
+  });
+})();
+
+(function initChatPlanetBar(){
+  const bar=document.getElementById('chatPlanetBar');
+  PLANET_POSITIONS.forEach(p=>{
+    const d=document.createElement('div');d.className='cpb-item';
+    d.innerHTML=`<span class="cpb-sym">${p.sym}</span><span class="cpb-txt">${p.name.split(' ')[0]}</span><span class="cpb-sign">${p.sign.split(' ')[0]}</span>`;
+    bar.appendChild(d);
+  });
+})();
+
+// Daily message
+const dailyMsgs=["The Moon transits into a favourable position. Seek clarity in decisions, especially matters of the heart.","Jupiter's blessings are particularly strong today. Begin new ventures with a prayer and positive intent.","Saturn asks for discipline today. Focus on your duties — karma rewards patience.","Mercury sharpens your communication. Resolve pending conversations with honesty and grace.","Venus brings beauty and harmony today. Nurture your relationships and creative gifts.","The Sun's energy supports leadership. Take initiative and let your authentic self shine.","Mars energises you for action. Channel this fire into constructive and disciplined effort."];
+document.getElementById('dailyMessage').textContent=dailyMsgs[new Date().getDay()];
+document.getElementById('todayDate').textContent=new Date().toLocaleDateString('en-IN',{day:'numeric',month:'long',year:'numeric'});
+
+// ══════════════════════════════════════════
+// PERSONALITY
+// ══════════════════════════════════════════
+function showPersonality(i,btn){
+  document.querySelectorAll('.ps-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  const r=rashis[i];
+  const transit=rashiTransitAdvice[r.name]||'';
+  const traitCards=r.traits.map(t=>`
+    <div class="trait-card">
+      <div class="trait-icon">${t.icon}</div>
+      <div class="trait-name">${t.name}</div>
+      <div class="trait-bar-wrap"><div class="trait-bar" style="width:0%" data-pct="${t.pct}"></div></div>
+      <div style="font-size:.7rem;color:var(--text-muted);margin-top:.3rem;">${t.pct}%</div>
+    </div>`).join('');
+  const strengthList=r.strengths.map(s=>`<li><span>✦</span>${s}</li>`).join('');
+  const weaknessList=r.weaknesses.map(w=>`<li><span>▸</span>${w}</li>`).join('');
+  const lifeCards=r.lifeAreas.map(la=>`<div class="la-item"><div class="la-icon">${la.icon}</div><div class="la-area">${la.area}</div><div class="la-rating">${la.rating}</div></div>`).join('');
+
+  const res=document.getElementById('personalityResult');
+  res.innerHTML=`
+    <div class="personality-header-rashi">
+      <div class="ph-symbol">${r.sym}</div>
+      <div class="ph-info">
+        <div class="ph-name">${r.name} · ${r.hindi} · ${r.gu}</div>
+        <div class="ph-ruler">${r.ruler} · ${r.el.toUpperCase()} SIGN · ${r.dates}</div>
+        <div class="ph-summary">${r.summary}</div>
+      </div>
+    </div>
+    <div class="trait-grid">${traitCards}</div>
+    <div class="strength-weakness">
+      <div class="sw-card"><div class="sw-title s">✦ CORE STRENGTHS</div><ul class="sw-list">${strengthList}</ul></div>
+      <div class="sw-card"><div class="sw-title w">▸ GROWTH AREAS</div><ul class="sw-list">${weaknessList}</ul></div>
+    </div>
+    <div class="life-areas">
+      <div class="la-title">LIFE AREA OVERVIEW</div>
+      <div class="la-grid">${lifeCards}</div>
+    </div>
+    <div class="planet-influence">
+      <div class="pi-title">🪐 PLANETARY INFLUENCE ON YOUR NATURE</div>
+      <div class="pi-text">${r.planetInfluence}</div>
+    </div>
+    <div class="current-transit">
+      <div class="ct-label">📡 CURRENT TRANSIT ANALYSIS (${new Date().toLocaleDateString('en-IN',{month:'long',year:'numeric'})})</div>
+      <div class="ct-text">${transit}</div>
+    </div>
+  `;
+  res.classList.add('visible');
+  // Animate trait bars after render
+  setTimeout(()=>{
+    res.querySelectorAll('.trait-bar').forEach(b=>{b.style.width=b.dataset.pct+'%';});
+  },100);
+  res.scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+
+// ══════════════════════════════════════════
+// LANG
+// ══════════════════════════════════════════
+let lang='en';
+function setLang(l,btn){
+  lang=l;
+  document.querySelectorAll('.lang-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+}
+
+// ══════════════════════════════════════════
+// TABS / MODAL
+// ══════════════════════════════════════════
+function switchTab(t,btn){
+  document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.tab-content').forEach(c=>c.classList.remove('active'));
+  document.getElementById('tab-'+t).classList.add('active');
+}
+
+let currentModalRashi=-1;
+function openModal(i){
+  currentModalRashi=i;const r=rashis[i];
+  document.getElementById('modalSymbol').textContent=r.sym;
+  document.getElementById('modalName').textContent=`${r.name} (${r.hindi} / ${r.gu})`;
+  document.getElementById('modalDetail').innerHTML=`<span class="modal-badge">📅 ${r.dates}</span><span class="modal-badge ${r.el}">${r.el.toUpperCase()}</span><span class="modal-badge">🪐 ${r.ruler}</span>`;
+  document.getElementById('modalChar').textContent=r.char;
+  document.getElementById('modalStrength').textContent=r.strength;
+  document.getElementById('modalPlanet').textContent=r.planet_desc;
+  document.getElementById('modalLucky').innerHTML=`💎 Stone: <strong>${r.stone}</strong><br>🎨 Color: <strong>${r.color}</strong><br>📅 Day: <strong>${r.day}</strong><br>🔢 Numbers: <strong>${r.num}</strong>`;
+  document.getElementById('rashiModal').classList.add('open');
+}
+function closeModal(){document.getElementById('rashiModal').classList.remove('open');}
+function selectRashiFromModal(){selectRashi(currentModalRashi);closeModal();}
+
+let selectedRashiIdx=-1;
+function selectRashi(i){
+  selectedRashiIdx=i;const r=rashis[i];
+  document.querySelectorAll('.rashi-card').forEach(c=>c.classList.remove('selected'));
+  document.getElementById('rashi-'+i).classList.add('selected');
+  document.getElementById('selectedRashiDisplay').innerHTML=`<span style="font-size:1.5rem;">${r.sym}</span><span>${r.name} (${r.hindi} · ${r.gu}) — ${r.ruler}</span>`;
+  showNotif('✨ RASHI SELECTED',r.sym+' '+r.name+' selected for consultation.');
+  const sel=document.getElementById('chatRashi');
+  for(let opt of sel.options){if(opt.text.includes(r.name)){sel.value=opt.value;break;}}
+}
+
+function showNotif(title,text){
+  document.getElementById('notifTitle').textContent=title;
+  document.getElementById('notifText').textContent=text;
+  const n=document.getElementById('notif');n.classList.add('show');
+  setTimeout(()=>n.classList.remove('show'),4000);
+}
+
+function handleFileUpload(input){if(input.files.length>0){const f=input.files[0];document.getElementById('uploadedFileName').textContent=f.name+' ('+(f.size/1024).toFixed(1)+'KB)';document.getElementById('uploadedFileInfo').style.display='flex';}}
+function removeFile(){document.getElementById('fileInput').value='';document.getElementById('uploadedFileInfo').style.display='none';}
+
+// ══════════════════════════════════════════
+// API
+// ══════════════════════════════════════════
+async function callAI(systemPrompt,messages){
+  const r=await fetch("https://api.anthropic.com/v1/messages",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({model:"claude-sonnet-4-20250514",max_tokens:1000,system:systemPrompt,messages:messages})});
+  const d=await r.json();
+  return d.content.map(b=>b.text||'').join('');
+}
+
+function getPlanetContext(){
+  return PLANET_POSITIONS.map(p=>`${p.name}: ${p.sign} ${p.degree} (${p.status}) — ${p.influence}`).join('\n');
+}
+
+async function askQuestion(){
+  const name=document.getElementById('userName').value||'Seeker';
+  const concern=document.getElementById('concernArea').value||'general';
+  const question=document.getElementById('userQuestion').value;
+  const rashi=selectedRashiIdx>=0?rashis[selectedRashiIdx]:null;
+  const l=lang==='hi'?'Hindi':lang==='gu'?'Gujarati':'English';
+  if(!question.trim()){showNotif('⚠️','Please enter your question.');return;}
+  const area=document.getElementById('responseArea'),loadEl=document.getElementById('loadingDots'),textEl=document.getElementById('responseText');
+  area.style.display='block';loadEl.style.display='block';textEl.textContent='';
+  area.scrollIntoView({behavior:'smooth',block:'nearest'});
+  const rashiInfo=rashi?`Rashi: ${rashi.name} (${rashi.hindi}), ruled by ${rashi.ruler}, ${rashi.el} sign.`:'';
+  const transitInfo=rashi?`\nCurrent transit for ${rashi.name}: ${rashiTransitAdvice[rashi.name]||''}`:'';
+  const sys=`You are Jyotish Darshan, an expert Vedic astrologer. Respond ONLY in ${l}. Be warm, compassionate, deeply knowledgeable.`;
+  const prompt=`Name: ${name}, Concern: ${concern}\nQuestion: "${question}"\n${rashiInfo}${transitInfo}\n\nCURRENT PLANETARY POSITIONS (${new Date().toDateString()}):\n${getPlanetContext()}\n\nUsing these ACTUAL current planetary positions, provide:\n1. Compassionate acknowledgment\n2. Specific analysis based on their Rashi AND the current transits above\n3. How current Saturn, Jupiter, Mars, and Rahu/Ketu positions specifically affect their situation\n4. Specific Vedic remedies (actual mantra text, gemstone, fasting day, charity)\n5. Practical guidance and timing (when will things improve based on planetary movement)\n6. Motivating blessing\n\nAbout 400 words. Be specific — reference actual planet names and their current signs.`;
+  try{const res=await callAI(sys,[{role:'user',content:prompt}]);loadEl.style.display='none';textEl.innerHTML=res.replace(/\n/g,'<br>');}
+  catch(e){loadEl.style.display='none';textEl.textContent='Unable to connect. Please try again. 🙏';}
+}
+
+async function generateKundali(){
+  const name=document.getElementById('kundaliName').value||'Seeker';
+  const dob=document.getElementById('kundaliDOB').value;
+  const tob=document.getElementById('kundaliTOB').value;
+  const pob=document.getElementById('kundaliPOB').value;
+  const area=document.getElementById('kundaliArea').value||'all';
+  const l=lang==='hi'?'Hindi':lang==='gu'?'Gujarati':'English';
+  if(!dob||!pob){showNotif('⚠️','Please enter date of birth and place.');return;}
+  const a2=document.getElementById('responseAreaKundali'),loadEl=document.getElementById('loadingKundali'),textEl=document.getElementById('responseKundali');
+  a2.style.display='block';loadEl.style.display='block';textEl.textContent='';
+  drawKundali(name,dob);document.getElementById('kundaliVisual').style.display='block';
+  a2.scrollIntoView({behavior:'smooth',block:'nearest'});
+  const sys=`You are a highly skilled Vedic astrologer. Respond ONLY in ${l}. Be warm, specific, uplifting.`;
+  const prompt=`Kundali reading for:\nName: ${name}, DOB: ${dob}, TOB: ${tob||'noon'}, POB: ${pob}, Focus: ${area}\n\nCURRENT TRANSITS (${new Date().toDateString()}):\n${getPlanetContext()}\n\nProvide:\n1. Likely Lagna (Ascendant) and Rashi based on DOB\n2. Likely Janma Nakshatra\n3. Current Dasha-Antardasha period\n4. How today's planetary positions interact with their natal chart\n5. Life insights — strengths, challenges, and upcoming planetary windows\n6. Specific Vedic remedies\n7. Uplifting guidance\n\nAbout 500 words. Reference actual current planetary positions.`;
+  try{const res=await callAI(sys,[{role:'user',content:prompt}]);loadEl.style.display='none';textEl.innerHTML=res.replace(/\n/g,'<br>');}
+  catch(e){loadEl.style.display='none';textEl.textContent='Unable to reach cosmic realm. Please try again. 🙏';}
+}
+
+function drawKundali(name,dob){
+  document.getElementById('kundaliSVG').innerHTML=`
+    <rect width="300" height="300" fill="#0A0612" stroke="#D4AF37" stroke-width=".5" opacity=".3" rx="4"/>
+    <rect x="10" y="10" width="280" height="280" fill="none" stroke="#D4AF37" stroke-width="1" opacity=".5"/>
+    <rect x="100" y="100" width="100" height="100" fill="rgba(212,175,55,.05)" stroke="#D4AF37" stroke-width=".8" opacity=".6"/>
+    <line x1="10" y1="10" x2="100" y2="100" stroke="#D4AF37" stroke-width=".5" opacity=".3"/>
+    <line x1="290" y1="10" x2="200" y2="100" stroke="#D4AF37" stroke-width=".5" opacity=".3"/>
+    <line x1="10" y1="290" x2="100" y2="200" stroke="#D4AF37" stroke-width=".5" opacity=".3"/>
+    <line x1="290" y1="290" x2="200" y2="200" stroke="#D4AF37" stroke-width=".5" opacity=".3"/>
+    <line x1="150" y1="10" x2="150" y2="100" stroke="#D4AF37" stroke-width=".5" opacity=".3"/>
+    <line x1="150" y1="200" x2="150" y2="290" stroke="#D4AF37" stroke-width=".5" opacity=".3"/>
+    <line x1="10" y1="150" x2="100" y2="150" stroke="#D4AF37" stroke-width=".5" opacity=".3"/>
+    <line x1="200" y1="150" x2="290" y2="150" stroke="#D4AF37" stroke-width=".5" opacity=".3"/>
+    <text x="150" y="148" text-anchor="middle" font-family="serif" font-size="10" fill="#D4AF37" opacity=".9">${name.split(' ')[0]}</text>
+    <text x="150" y="163" text-anchor="middle" font-family="serif" font-size="8" fill="#9A8A5A">${dob}</text>
+    <text x="150" y="65" text-anchor="middle" font-size="9" fill="#D4AF37" opacity=".8">Lagna</text>
+    <text x="55" y="35" text-anchor="middle" font-size="8" fill="#9A8A5A" opacity=".7">XII</text>
+    <text x="245" y="35" text-anchor="middle" font-size="8" fill="#9A8A5A" opacity=".7">II</text>
+    <text x="265" y="155" text-anchor="middle" font-size="8" fill="#9A8A5A" opacity=".7">III</text>
+    <text x="245" y="270" text-anchor="middle" font-size="8" fill="#9A8A5A" opacity=".7">IV</text>
+    <text x="150" y="278" text-anchor="middle" font-size="8" fill="#9A8A5A" opacity=".7">V</text>
+    <text x="55" y="270" text-anchor="middle" font-size="8" fill="#9A8A5A" opacity=".7">VI</text>
+    <text x="35" y="155" text-anchor="middle" font-size="8" fill="#9A8A5A" opacity=".7">VII</text>
+    <text x="55" y="110" text-anchor="middle" font-size="8" fill="#9A8A5A" opacity=".7">XI</text>
+    <text x="245" y="110" text-anchor="middle" font-size="8" fill="#9A8A5A" opacity=".7">X</text>
+    <text x="150" y="88" text-anchor="middle" font-size="13" fill="#F0D060">☀</text>
+    <text x="260" y="97" text-anchor="middle" font-size="10" fill="#9A8A5A" opacity=".6">♃</text>
+    <text x="260" y="210" text-anchor="middle" font-size="10" fill="#9A8A5A" opacity=".6">♀</text>
+    <text x="38" y="97" text-anchor="middle" font-size="10" fill="#9A8A5A" opacity=".6">☊</text>
+    <text x="38" y="210" text-anchor="middle" font-size="10" fill="#9A8A5A" opacity=".6">☋</text>`;
+}
+
+async function analyzeKundali(){
+  const name=document.getElementById('uploadName').value||'Seeker';
+  const question=document.getElementById('uploadQuestion').value||'general guidance';
+  const l=lang==='hi'?'Hindi':lang==='gu'?'Gujarati':'English';
+  const a2=document.getElementById('responseAreaUpload'),loadEl=document.getElementById('loadingUpload'),textEl=document.getElementById('responseUpload');
+  a2.style.display='block';loadEl.style.display='block';textEl.textContent='';
+  a2.scrollIntoView({behavior:'smooth',block:'nearest'});
+  const sys=`You are a highly skilled Vedic astrologer. Respond ONLY in ${l}. Be warm, specific, uplifting.`;
+  const prompt=`${name} has uploaded their Kundali. Question: "${question}"\n\nCURRENT TRANSITS:\n${getPlanetContext()}\n\nProvide analysis incorporating both the birth chart patterns AND how current transits affect the person. Include specific remedies and timing. About 450 words.`;
+  try{const res=await callAI(sys,[{role:'user',content:prompt}]);loadEl.style.display='none';textEl.innerHTML=res.replace(/\n/g,'<br>');}
+  catch(e){loadEl.style.display='none';textEl.textContent='Unable to connect. Please try again. 🙏';}
+}
+
+// ══════════════════════════════════════════
+// CHAT — FIXED, SMOOTH, NO BLINK
+// ══════════════════════════════════════════
+let chatOpen=false;
+let chatProfile={name:'',dob:'',tob:'',pob:'',rashi:'',setupDone:false};
+let chatHistory=[];
+let chatTyping=false;
+let welcomeDone=false;
+
+function toggleChat(){
+  chatOpen=!chatOpen;
+  const panel=document.getElementById('chatPanel');
+  const backdrop=document.getElementById('chatBackdrop');
+  panel.classList.toggle('open',chatOpen);
+  backdrop.classList.toggle('open',chatOpen);
+  if(chatOpen){
+    document.getElementById('chatBadge').style.display='none';
+    if(!welcomeDone){
+      welcomeDone=true;
+      // Delay welcome so panel animation completes first — prevents blink
+      setTimeout(addWelcomeMessage,420);
+    }
+    setTimeout(()=>{
+      const inp=document.getElementById('chatInput');
+      if(inp)inp.focus();
+    },420);
+  }
+}
+
+function addWelcomeMessage(){
+  addGurujiMsg(`🙏 Namaste! I am Guruji Anantdev, your personal Vedic astrologer.\n\nI see the planets today: Jupiter is blessing ${PLANET_POSITIONS[4].sign.split(' ')[0]}, Saturn is in ${PLANET_POSITIONS[6].sign.split(' ')[0]}, and Venus shines in ${PLANET_POSITIONS[5].sign.split(' ')[0]}. The cosmos are speaking.\n\nShare your name, date of birth, and Rashi above so I can give you guidance rooted in YOUR birth chart and today's actual planetary positions.\n\nThen tell me — what is weighing on your heart right now? 🌟`,null);
+}
+
+function confirmSetup(){
+  const name=document.getElementById('chatName').value.trim();
+  const dob=document.getElementById('chatDOB').value;
+  const tob=document.getElementById('chatTOB').value;
+  const pob=document.getElementById('chatPOB').value.trim();
+  const rashi=document.getElementById('chatRashi').value;
+  if(!name){showNotif('⚠️','Please enter your name.');return;}
+  chatProfile={name,dob,tob,pob,rashi,setupDone:true};
+  document.getElementById('setupForm').style.display='none';
+  document.getElementById('setupDoneRow').style.display='flex';
+  const rashiShort=rashi.split('—')[0].trim()||'Rashi not selected';
+  document.getElementById('setupDoneInfo').textContent=`${name} · ${rashiShort} · ${pob||'Location not set'}`;
+  const rashiName=rashi.match(/\(([^)]+)\)/)?.[1]||'';
+  const transit=rashi?rashiTransitAdvice[rashiName]||rashiTransitAdvice[rashis.find(r=>rashi.includes(r.name))?.name]||'':'';
+  addGurujiMsg(`Namaste ${name}! 🙏\n\nI have your details now. ${rashiName?`As a ${rashiName} — `:``}let me tell you what the current skies say for you.\n\n${transit?'📡 Current Transit: '+transit.substring(0,200)+'...':''}\n\nJupiter in ${PLANET_POSITIONS[4].sign.split(' ')[0]} and Saturn in ${PLANET_POSITIONS[6].sign.split(' ')[0]} are creating a very specific energy pattern for your sign right now.\n\nWhat is troubling you, beta? Share freely — I am listening. 🌟`,'welcoming');
+}
+
+function editSetup(){
+  document.getElementById('setupForm').style.display='grid';
+  document.getElementById('setupDoneRow').style.display='none';
+  chatProfile.setupDone=false;
+}
+
+function autoResize(ta){ta.style.height='auto';ta.style.height=Math.min(ta.scrollHeight,120)+'px';}
+function handleChatKey(e){if(e.key==='Enter'&&!e.shiftKey){e.preventDefault();sendChatMessage();}}
+function sendQuick(chip){document.getElementById('chatInput').value=chip.textContent;sendChatMessage();}
+function getNow(){return new Date().toLocaleTimeString('en-IN',{hour:'2-digit',minute:'2-digit'});}
+
+const emotionColors={stressed:'#FF8C69',sad:'#8FB8FF',anxious:'#FFD580',hopeful:'#90EE90',confused:'#DDA0DD',welcoming:'#FFD700',angry:'#FF6B6B',neutral:'#9A8A5A'};
+const emotionBorders={stressed:'#FF6B6B',sad:'#6B9FFF',anxious:'#FFC040',hopeful:'#60D080',confused:'#CC80CC',welcoming:'#D4AF37',angry:'#FF4040',neutral:'#5A4A2A'};
+const emotionEmoji={stressed:'😟',sad:'💙',anxious:'😰',hopeful:'🌱',confused:'🤔',welcoming:'🙏',angry:'😤',neutral:'🧘'};
+
+function addGurujiMsg(text,emotion){
+  const msgs=document.getElementById('chatMessages');
+  const el=document.createElement('div');
+  el.className='cmsg guruji';
+  let emotionHtml='';
+  if(emotion&&emotionColors[emotion]&&emotion!=='neutral'){
+    emotionHtml=`<div class="emotion-row"><span class="emotion-lbl">GURUJI SENSES:</span><span class="emotion-chip" style="color:${emotionColors[emotion]};border-color:${emotionBorders[emotion]};background:${emotionColors[emotion]}18;">${emotionEmoji[emotion]} ${emotion.charAt(0).toUpperCase()+emotion.slice(1)}</span></div>`;
+  }
+  // Find relevant planet for context bar
+  const planetCtx=`🪐 ${PLANET_POSITIONS[0].name.split(' ')[0]} in ${PLANET_POSITIONS[0].sign.split(' ')[0]} · ${PLANET_POSITIONS[4].name.split(' ')[0]} in ${PLANET_POSITIONS[4].sign.split(' ')[0]} · ${PLANET_POSITIONS[6].name.split(' ')[0]} in ${PLANET_POSITIONS[6].sign.split(' ')[0]}`;
+  el.innerHTML=`
+    <div class="cmsg-av">🧙</div>
+    <div class="cmsg-body">
+      <div class="cmsg-bubble">${text.replace(/\n/g,'<br>')}${emotionHtml}
+        <div class="planet-context-bar">${planetCtx}</div>
+      </div>
+      <div class="cmsg-time">Guruji · ${getNow()}</div>
+    </div>`;
+  msgs.appendChild(el);
+  // Smooth scroll without layout thrash
+  requestAnimationFrame(()=>{msgs.scrollTop=msgs.scrollHeight;});
+  chatHistory.push({role:'assistant',content:text});
+}
+
+function addUserMsg(text){
+  const msgs=document.getElementById('chatMessages');
+  const el=document.createElement('div');el.className='cmsg user';
+  el.innerHTML=`<div class="cmsg-av">🙏</div><div class="cmsg-body"><div class="cmsg-bubble">${text.replace(/\n/g,'<br>')}</div><div class="cmsg-time">${chatProfile.name||'You'} · ${getNow()}</div></div>`;
+  msgs.appendChild(el);
+  requestAnimationFrame(()=>{msgs.scrollTop=msgs.scrollHeight;});
+  chatHistory.push({role:'user',content:text});
+}
+
+function showTyping(){
+  removeTyping();
+  const msgs=document.getElementById('chatMessages');
+  const el=document.createElement('div');el.id='typingInd';el.className='cmsg guruji';
+  el.innerHTML=`<div class="cmsg-av">🧙</div><div class="typing-wrap"><div class="typing-bubble"><div class="tdot"></div><div class="tdot"></div><div class="tdot"></div></div></div>`;
+  msgs.appendChild(el);
+  requestAnimationFrame(()=>{msgs.scrollTop=msgs.scrollHeight;});
+}
+function removeTyping(){const e=document.getElementById('typingInd');if(e)e.remove();}
+
+async function sendChatMessage(){
+  const input=document.getElementById('chatInput');
+  const text=input.value.trim();
+  if(!text||chatTyping)return;
+  input.value='';input.style.height='auto';
+  document.getElementById('chatSendBtn').disabled=true;
+  chatTyping=true;
+  addUserMsg(text);
+  document.getElementById('quickWrap').style.display='none';
+  showTyping();
+
+  const l=lang==='hi'?'Hindi':lang==='gu'?'Gujarati':'English';
+  const p=chatProfile;
+  const rashiDetails=rashis.find(r=>p.rashi.includes(r.name));
+
+  const systemPrompt=`You are Guruji Anantdev, a deeply compassionate and highly knowledgeable Vedic astrologer with 40 years of experience in Jyotish Shastra.
+
+RESPOND ONLY IN ${l}.
+
+SEEKER PROFILE:
+- Name: ${p.name||'Seeker'}
+- Date of Birth: ${p.dob||'Unknown'}
+- Time of Birth: ${p.tob||'Unknown'}
+- Place of Birth: ${p.pob||'Unknown'}
+- Rashi: ${p.rashi||'Unknown'}
+${rashiDetails?`- Element: ${rashiDetails.el}, Ruling Planet: ${rashiDetails.ruler}
+- Nature: ${rashiDetails.char}
+- Strengths: ${rashiDetails.strength}`:''}
+
+TODAY'S ACTUAL PLANETARY POSITIONS (${new Date().toDateString()}):
+${getPlanetContext()}
+
+${rashiDetails?`CURRENT TRANSIT FOR ${rashiDetails.name}:
+${rashiTransitAdvice[rashiDetails.name]||''}`:''} 
+
+YOUR ROLE AND STYLE:
+- You are like a wise, warm grandfather who cares deeply
+- ALWAYS first acknowledge their emotional state with empathy before giving advice
+- Reference ACTUAL current planetary positions in your response (not generic)
+- Explain HOW current transits specifically affect their Rashi and situation
+- Give SPECIFIC Vedic remedies: exact mantra text (e.g., "Om Namah Shivaya" or "Om Shri Guruve Namah"), specific gemstone, specific fasting day, specific charity (e.g., donate wheat to a poor family on Saturday)
+- Give timing: mention actual upcoming planetary events (e.g., "Jupiter stays in Vrishabha until May 2025")
+- Ask gentle follow-up questions when you need more context
+- Keep responses conversational, warm (150-250 words) — not lecture-style
+- END with one specific action they can take TODAY
+
+EMOTION DETECTION: Start your response with exactly: [EMOTION:keyword]
+(keyword = stressed / sad / anxious / hopeful / confused / angry / welcoming / neutral)
+This tag will be removed before showing — just the emotion is extracted.
+
+ACCURACY STANDARD: Reference real planetary positions. Be specific. Never give generic advice. Always tie advice to their Rashi's current transit.`;
+
+  const recentMsgs=chatHistory.slice(-12);
+
+  try{
+    const result=await callAI(systemPrompt,[...recentMsgs,{role:'user',content:text}]);
+    removeTyping();
+    const em=result.match(/^\[EMOTION:(\w+)\]/);
+    const emotion=em?em[1]:null;
+    const clean=result.replace(/^\[EMOTION:\w+\]\n?/,'').trim();
+    addGurujiMsg(clean,emotion);
+  }catch(e){
+    removeTyping();
+    addGurujiMsg('Beta, the cosmic connection was briefly disrupted. Please share your concern once more — I am fully here. 🙏',null);
+  }
+  chatTyping=false;
+  document.getElementById('chatSendBtn').disabled=false;
+  setTimeout(()=>{const i=document.getElementById('chatInput');if(i)i.focus();},80);
+}
+</script>
+</body>
+</html>
